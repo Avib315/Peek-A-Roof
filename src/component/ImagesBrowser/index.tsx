@@ -117,7 +117,7 @@ const ImagesBrowser: React.FC<Props> = ({ columns = 3, showLightbox = true }) =>
             <div
               key={image.id}
               className="gallery-item"
-              onClick={() => handleImageClick(image)}
+              // onClick={() => handleImageClick(image)}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="image-wrapper">
