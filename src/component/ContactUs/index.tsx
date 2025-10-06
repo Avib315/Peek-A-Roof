@@ -43,7 +43,7 @@ const ContactUs: React.FC<Props> = ({ variant = 'default', showTitle = true }) =
           </div>
           <div className="contact-info">
             <span className="contact-label">
-              {isEnglish ? 'Call Us' : 'התקשר אלינו'}
+              {translations.callUs}
             </span>
             <span className="contact-value">{translations.phoneNumber}</span>
           </div>
@@ -63,7 +63,7 @@ const ContactUs: React.FC<Props> = ({ variant = 'default', showTitle = true }) =
           </div>
           <div className="contact-info">
             <span className="contact-label">
-              {isEnglish ? 'Email Us' : 'שלח מייל'}
+            {translations.emailUs}
             </span>
             <span className="contact-value">{translations.emailAddress}</span>
           </div>

@@ -41,24 +41,17 @@ function App() {
     <div className="app">
       <Header />
 
-      {/* Hero Section with Video */}
       <section id="home" className="hero-section">
         <div className="hero-video-container">
           <VideoDisplay />
           <div className="hero-overlay" />
         </div>
-        
         <div className="hero-content fade-in">
           <h1 className="hero-title">{translations.title}</h1>
           <h2 className="hero-subtitle">{translations.secondTitle}</h2>
           <div className="hero-buttons">
-            {/* <Button 
-              icon="phone" 
-              title={isEnglish ? "Call Now" : "התקשר עכשיו"} 
-              
-            /> */}
             <button className="btn btn-secondary" onClick={handleContactClick}>
-              {isEnglish ? "Get Free Quote" : "קבל הצעת מחיר"}
+              {translations.getQuote}
             </button>
           </div>
         </div>
@@ -78,7 +71,7 @@ function App() {
       <section id="gallery" className="gallery-section fade-in">
         <div className="container">
           <h2 className="section-title">
-            {isEnglish ? "Recent Roof Inspections" : "בדיקות גג אחרונות"}
+            {translations.recentImages}
           </h2>
           <ImagesBrowser />
         </div>
@@ -96,7 +89,7 @@ function App() {
         <div className="container">
           <p className="footer-text">{translations.footer}</p>
           <p className="footer-copyright">
-            &copy; {new Date().getFullYear()} SkyInspect. {isEnglish ? "All Rights Reserved" : "כל הזכויות שמורות"}.
+            &copy; {new Date().getFullYear()} {translations.titleLogo} {translations.allRightReserved}.
           </p>
         </div>
       </footer>

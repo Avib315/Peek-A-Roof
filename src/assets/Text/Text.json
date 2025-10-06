@@ -14,12 +14,17 @@
             "eng": "Worried about loose tiles or blocked gutters?"
         },
         "phoneNumber": {
-            "heb": "+44 7354 740445",
-            "eng": "+44 7354 740445"
+            "heb": "07354 740445",
+            "eng": "07354 740445"
+        },
+        "titleLogo":{
+            "heb": "Peek-A-Roof",
+            "eng": "Peek-A-Roof"
+
         },
         "emailAddress": {
-            "heb": "ahron@gamil.com",
-            "eng": "ahron@gamil.com"
+            "heb": "Peek.a.roof@gmail.com",
+            "eng": "Peek.a.roof@gmail.com"
         },
         "description": {
             "heb": "לפני שאתה מזמין מישהו עם סולם ותג מחיר, תן לנו להראות לך בדיוק מה קורה – בלי לחץ ובלי הצעות מכירה אגרסיביות. אנו משתמשים ברחפן באיכות גבוהה במיוחד לצילום הגג שלך מכל זווית. תקבל תמונות חדות וסרטון מקצועי כדי שתוכל לקבל החלטות מושכלות.",
@@ -28,5 +33,38 @@
         "footer": {
             "heb": "מושלם עבור בעלי בתים, משכירים וכל מי שרוצה שקט נפשי מבלי לעזוב את הקרקע. אנחנו טסים כדי שאתה לא תצטרך לטפס.",
             "eng": "Perfect for homeowners, landlords and anyone who wants peace of mind without leaving the ground. We fly so you don't have to climb."
+        },
+        "home":{
+            "heb":"בית",
+            "eng":"Home"
+        },
+        "gallery":{
+            "heb":"גלריה",
+            "eng":"Gallery"
+        },
+        "contact":{
+            "heb":"צור קשר",
+            "eng":"Contact"
+        },
+        "getQuote":{
+            "heb":"קבל הצעת מחיר",
+            "eng":"Get Free Quote"
+        },
+        "recentImages":{
+            "heb":"בדיקות גג אחרונות",
+            "eng":"Recent Roof Inspections"
+        },
+        "allRightReserved":{
+            "heb":"כל הזכויות שמורות",
+            "eng":"All Rights Reserved"
+        },
+        "callUs":{
+              "heb":"התקשר אלינו",
+            "eng":"Call Us"
+        },
+        "emailUs":{
+              "heb":"שלח מייל",
+            "eng":"Email Us"
         }
+
     }
