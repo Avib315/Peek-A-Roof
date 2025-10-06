@@ -1,7 +1,7 @@
 // src/stores/useTranslationStore.ts
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { TranslationsKeys, TranslationsLangs, TranslationsObj, TranslationsStrings } from '../interfaces/ITranslation';
+import type { TranslationsKeys, TranslationsLangs, TranslationsStrings } from '../interfaces/ITranslation';
 import TextJson from '../assets/Text/Text.json';
 import { GetAllTextByTranslations } from '../utils/GetText';
 
@@ -20,7 +20,7 @@ interface TranslationStore {
 // ============================================
 // HELPER FUNCTION
 // ============================================
-const Text = TextJson as unknown as TranslationsKeys;
+// const Text = TextJson as unknown as TranslationsKeys;
 
 // ============================================
 // ZUSTAND STORE
