@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform $transition-fast;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+  
+  &:active {
+    transform: scale(0.98);
+  }
+  
+  .logo-image {
+    display: block;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+    
+    // Smooth image rendering
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+// Responsive adjustments
+@include respond-to-max(sm) {
+  .logo-container {
+    .logo-image {
+      max-height: 35px;
+    }
+  }
+}

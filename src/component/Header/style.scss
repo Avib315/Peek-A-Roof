@@ -1,0 +1,195 @@
+// style.scss
+@import "../../styles/variables.scss";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $spacing-xl;
+  background-color: transparent;
+  transition: all $transition-base $ease-in-out;
+  z-index: $z-index-fixed;
+
+  // Logo
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: $h4-size;
+    font-weight: $font-weight-bold;
+    color: $text-light;
+    cursor: pointer;
+    transition: color $transition-fast;
+    letter-spacing: 0.5px;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  // Navigation
+  nav {
+    display: flex;
+    gap: $spacing-xl;
+
+    a {
+      color: $text-light;
+      text-decoration: none;
+      font-size: $font-size-base;
+      font-weight: $font-weight-medium;
+      position: relative;
+      transition: color $transition-fast;
+      padding: $spacing-sm 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $primary-color;
+        transition: width $transition-base $ease-out;
+      }
+
+      &:hover {
+        color: $primary-color;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // Contact Button
+  .contact-btn {
+    padding: $spacing-sm $spacing-lg;
+    background-color: $primary-color;
+    color: $text-light;
+    border: 2px solid $primary-color;
+    border-radius: $border-radius-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+    transition: all $transition-fast;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: transparent;
+      color: $primary-color;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  // Scrolled State
+  &.scrolled {
+    height: $header-height-scrolled;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: $shadow-base;
+
+    .logo {
+      color: $text-primary;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    nav a {
+      color: $text-primary;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .contact-btn {
+      padding: $spacing-xs $spacing-lg;
+    }
+  }
+
+  // ============================================
+  // RESPONSIVE STYLES
+  // ============================================
+
+  // Tablet and below
+  @include respond-to-max(md) {
+    padding: 0 $spacing-lg;
+
+    nav {
+      gap: $spacing-lg;
+
+      a {
+        font-size: $font-size-sm;
+      }
+    }
+
+    .contact-btn {
+      padding: $spacing-xs $spacing-md;
+      font-size: $font-size-sm;
+    }
+  }
+
+  // Mobile
+  @include respond-to-max(sm) {
+    height: 60px;
+    padding: 0 $spacing-md;
+
+    .logo {
+      font-size: $h5-size;
+    }
+
+    nav {
+      display: none; // Hide nav on mobile, add hamburger menu if needed
+    }
+
+    .contact-btn {
+      padding: $spacing-xs $spacing-md;
+      font-size: $font-size-sm;
+    }
+
+    &.scrolled {
+      height: 50px;
+    }
+  }
+}
+
+// ============================================
+// HAMBURGER MENU (Optional for mobile)
+// ============================================
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: $spacing-sm;
+
+  @include respond-to-max(sm) {
+    display: flex;
+  }
+
+  span {
+    width: 25px;
+    height: 3px;
+    background-color: $text-light;
+    transition: all $transition-fast;
+    border-radius: 2px;
+  }
+
+  .header.scrolled & span {
+    background-color: $text-primary;
+  }
+}

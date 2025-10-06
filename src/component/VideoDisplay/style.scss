@@ -1,0 +1,106 @@
+@import "../../styles/variables.scss";
+
+.video-display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: $dark-color;
+  video{
+      
+}
+
+.video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity $transition-slow;
+    z-index: 2;
+    
+    &.loaded {
+      opacity: 1;
+    }
+    
+    &.loading {
+      opacity: 0;
+    }
+    
+    // Ensure video covers properly on all screen sizes
+    @media (min-aspect-ratio: 16/9) {
+      width: 100%;
+      height: auto;
+    }
+    
+    @media (max-aspect-ratio: 16/9) {
+      width: auto;
+      height: 100%;
+    }
+    
+    // Mobile optimization
+    @include respond-to-max(sm) {
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+  
+  // Fallback image when video fails
+  .video-fallback-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  
+  // Loading spinner
+  .video-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top-color: $white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+  
+  // Error state
+  &.video-error {
+    background-color: $bg-dark;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

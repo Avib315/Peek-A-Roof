@@ -1,0 +1,295 @@
+@import "./styles/variables.scss";
+
+// ============================================
+// APP WRAPPER
+// ============================================
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+// ============================================
+// HERO SECTION WITH VIDEO
+// ============================================
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+  // Video Container
+  .hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    
+    // Overlay for better text readability
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $primary-color;
+      z-index: 1;
+    }
+  }
+  
+  // Content
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: $spacing-xl;
+    text-align: center;
+    color: $text-light;
+    
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: $font-weight-bold;
+      color: $text-light;
+      margin-bottom: $spacing-lg;
+      line-height: 1.2;
+      text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+      animation: fadeInDown 1s ease both;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      font-weight: $font-weight-medium;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: $spacing-2xl;
+      text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+      animation: fadeInDown 1s ease 0.2s both;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: $spacing-lg;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease 0.4s both;
+      
+      .btn {
+        padding: $spacing-md $spacing-2xl;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all $transition-base;
+        border: 2px solid transparent;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        
+        &.btn-primary {
+          background-color: $white;
+          color: $primary-color;
+          border-color: $white;
+          
+          &:hover {
+            background-color: $primary-color;
+            color: $white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+          }
+        }
+        
+        &.btn-secondary {
+          background-color: transparent;
+          color: $white;
+          border-color: $white;
+          
+          &:hover {
+            background-color: $white;
+            color: $primary-color;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
+  
+  @include respond-to-max(md) {
+    min-height: calc(100vh - 60px);
+    
+    .hero-content {
+      padding: $spacing-lg;
+    }
+  }
+  
+  @include respond-to-max(sm) {
+    .hero-content {
+      padding: $spacing-md;
+      
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        
+        .btn {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+    }
+  }
+}
+
+// ============================================
+// ABOUT SECTION
+// ============================================
+.about-section {
+  padding: $spacing-4xl 0;
+  background-color: $white;
+  
+  .about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: $primary-color;
+      margin-bottom: $spacing-xl;
+      font-weight: $font-weight-bold;
+    }
+    
+    .section-description {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.8;
+      color: $text-secondary;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+  
+  @include respond-to-max(md) {
+    padding: $spacing-3xl 0;
+  }
+  
+  @include respond-to-max(sm) {
+    padding: $spacing-2xl 0;
+  }
+}
+
+// ============================================
+// GALLERY SECTION
+// ============================================
+.gallery-section {
+  padding: $spacing-4xl 0;
+  background-color: $bg-secondary;
+  
+  .section-title {
+    text-align: center;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: $primary-color;
+    margin-bottom: $spacing-3xl;
+    font-weight: $font-weight-bold;
+  }
+  
+  @include respond-to-max(md) {
+    padding: $spacing-3xl 0;
+    
+    .section-title {
+      margin-bottom: $spacing-2xl;
+    }
+  }
+  
+  @include respond-to-max(sm) {
+    padding: $spacing-2xl 0;
+    
+    .section-title {
+      margin-bottom: $spacing-xl;
+    }
+  }
+}
+
+// ============================================
+// CONTACT SECTION
+// ============================================
+.contact-section {
+  padding: $spacing-4xl 0;
+  background: linear-gradient(135deg, #0077cc 0%, #005fa3 100%);
+  color: $text-light;
+  
+  @include respond-to-max(md) {
+    padding: $spacing-3xl 0;
+  }
+  
+  @include respond-to-max(sm) {
+    padding: $spacing-2xl 0;
+  }
+}
+
+// ============================================
+// FOOTER
+// ============================================
+.footer {
+  background-color: #005fa3;
+  color: $text-light;
+  padding: $spacing-2xl 0;
+  text-align: center;
+  
+  .footer-text {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-md;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .footer-copyright {
+    font-size: $font-size-sm;
+    opacity: 0.8;
+    margin-top: $spacing-md;
+  }
+  
+  @include respond-to-max(sm) {
+    padding: $spacing-xl 0;
+    
+    .footer-text {
+      font-size: $font-size-base;
+    }
+  }
+}
+
+// ============================================
+// SCROLL ANIMATIONS
+// ============================================
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+  
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ============================================
+// RTL SUPPORT
+// ============================================
+[dir="rtl"] {
+  .hero-content,
+  .about-content,
+  .section-title,
+  .footer {
+    text-align: center;
+  }
+}
+
+// ============================================
+// SMOOTH SCROLL BEHAVIOR
+// ============================================
+html {
+  scroll-behavior: smooth;
+}
