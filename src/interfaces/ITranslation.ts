@@ -13,6 +13,10 @@ interface TranslationsObj {
     home: TranslationsObj;
     contactUs: TranslationsObj;
     Email: TranslationsObj;
+    phoneNumber:TranslationsObj;
+    emailAddress:TranslationsObj;
+    contactTitle:TranslationsObj;
+    contactDescription:TranslationsObj
   }
   
   
@@ -25,6 +29,10 @@ interface TranslationsObj {
     home: string;
     contactUs: string;
     Email: string;
+    phoneNumber:string;
+    emailAddress:string;
+    contactTitle:string;
+    contactDescription:string
   }
   
   export type { TranslationsKeys, TranslationsObj  , TranslationsStrings , TranslationsLangs};

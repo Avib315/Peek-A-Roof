@@ -1,0 +1,201 @@
+@import "../../styles/variables.scss";
+
+// ============================================
+// CONTACT US COMPONENT
+// ============================================
+.contact-us {
+  width: 100%;
+  
+  // Header
+  .contact-header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+    
+    .contact-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: $white;
+      margin-bottom: $spacing-md;
+      font-weight: $font-weight-bold;
+    }
+    
+    .contact-description {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  // Contact Methods Container
+  .contact-methods {
+    display: flex;
+    gap: $spacing-xl;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    @include respond-to-max(sm) {
+      flex-direction: column;
+      gap: $spacing-lg;
+    }
+  }
+  
+  // Contact Item (Phone/Email)
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    padding: $spacing-lg $spacing-xl;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: $border-radius-lg;
+    color: $white;
+    text-decoration: none;
+    transition: all $transition-base;
+    cursor: pointer;
+    min-width: 280px;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      
+      .contact-icon {
+        transform: scale(1.1) rotate(5deg);
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+    
+    &:active {
+      transform: translateY(-2px);
+    }
+    
+    .contact-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transition: all $transition-base;
+      flex-shrink: 0;
+      
+      svg {
+        stroke-width: 2;
+      }
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xs;
+      
+      .contact-label {
+        font-size: $font-size-sm;
+        opacity: 0.9;
+        font-weight: $font-weight-medium;
+      }
+      
+      .contact-value {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+      }
+    }
+    
+    @include respond-to-max(sm) {
+      width: 100%;
+      min-width: auto;
+    }
+  }
+  
+  // ============================================
+  // VARIANT: MINIMAL
+  // ============================================
+  &--minimal {
+    .contact-methods {
+      gap: $spacing-md;
+    }
+    
+    .contact-item {
+      padding: $spacing-md $spacing-lg;
+      min-width: 240px;
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.3);
+      
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .contact-info {
+        .contact-value {
+          font-size: $font-size-base;
+        }
+      }
+    }
+  }
+  
+  // ============================================
+  // VARIANT: CARD
+  // ============================================
+  &--card {
+    background: $white;
+    padding: $spacing-3xl;
+    border-radius: $border-radius-xl;
+    box-shadow: $shadow-xl;
+    
+    .contact-header {
+      .contact-title {
+        color: $text-primary;
+      }
+      
+      .contact-description {
+        color: $text-secondary;
+      }
+    }
+    
+    .contact-item {
+      background: $bg-secondary;
+      border-color: $border-color;
+      color: $text-primary;
+      
+      &:hover {
+        background: lighten($bg-secondary, 2%);
+        border-color: $primary-color;
+        
+        .contact-icon {
+          background: $primary-color;
+          color: $white;
+        }
+      }
+      
+      .contact-icon {
+        background: $primary-color;
+        color: $white;
+      }
+    }
+    
+    @include respond-to-max(md) {
+      padding: $spacing-2xl;
+    }
+    
+    @include respond-to-max(sm) {
+      padding: $spacing-xl;
+    }
+  }
+}
+
+// ============================================
+// RTL SUPPORT
+// ============================================
+[dir="rtl"] {
+  .contact-us {
+    .contact-item {
+      .contact-info {
+        text-align: right;
+      }
+    }
+  }
+}

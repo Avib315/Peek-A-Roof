@@ -11,7 +11,15 @@
         },
         "question": {
             "heb": "מודאג מאריחים רופפים?",
-            "eng": "Worried about loose tiles?"
+            "eng": "Worried about loose tiles or blocked gutters?"
+        },
+        "phoneNumber": {
+            "heb": "+44 7354 740445",
+            "eng": "+44 7354 740445"
+        },
+        "emailAddress": {
+            "heb": "ahron@gamil.com",
+            "eng": "ahron@gamil.com"
         },
         "description": {
             "heb": "לפני שאתה מזמין מישהו עם סולם ותג מחיר, תן לנו להראות לך בדיוק מה קורה – בלי לחץ ובלי הצעות מכירה אגרסיביות. אנו משתמשים ברחפן באיכות גבוהה במיוחד לצילום הגג שלך מכל זווית. תקבל תמונות חדות וסרטון מקצועי כדי שתוכל לקבל החלטות מושכלות.",
