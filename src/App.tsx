@@ -52,11 +52,11 @@ function App() {
           <h1 className="hero-title">{translations.title}</h1>
           <h2 className="hero-subtitle">{translations.secondTitle}</h2>
           <div className="hero-buttons">
-            <Button 
+            {/* <Button 
               icon="phone" 
               title={isEnglish ? "Call Now" : "התקשר עכשיו"} 
               
-            />
+            /> */}
             <button className="btn btn-secondary" onClick={handleContactClick}>
               {isEnglish ? "Get Free Quote" : "קבל הצעת מחיר"}
             </button>

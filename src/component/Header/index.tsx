@@ -28,9 +28,7 @@ const Header: React.FC<Props> = ({ isEnglish = true }) => {
         <a href="#contact">{isEnglish ? "Contact" : "צור קשר"}</a>
       </nav>
 
-      <button className="contact-btn">
-        {isEnglish ? "Contact Us" : "צור קשר"}
-      </button>
+ 
     </header>
   );
 };

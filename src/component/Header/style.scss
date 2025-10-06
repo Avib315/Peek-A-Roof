@@ -9,7 +9,7 @@
   height: $header-height;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 30%;
   padding: 0 $spacing-xl;
   background-color: transparent;
   transition: all $transition-base $ease-in-out;
@@ -37,6 +37,7 @@
   nav {
     display: flex;
     gap: $spacing-xl;
+
 
     a {
       color: $text-light;
