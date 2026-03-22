@@ -1,52 +1,31 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslationStore } from '../stores/useTranslationStore';
 import DroneScene from '../component/DroneScene';
 import ContactForm from '../component/ContactForm';
-import { Star, Megaphone, Film, ArrowLeft, Play } from 'lucide-react';
-import videoBistro from '../assets/videos/media_content_bistro.mov';
-import videoNov    from '../assets/videos/media_conent_nov.mov';
+import { Star, Megaphone, Film, ArrowLeft } from 'lucide-react';
+import settings from '../assets/settings/settings.json';
 import './ServicePage.scss';
 import './MediaContentPage.scss';
 
-// ── Video card with click-to-play ──────────────────────────────────────────
+// ── YouTube embed card ─────────────────────────────────────────────────────
 interface VideoCardProps {
-  src: string;
+  youtubeUrl: string;
   title: string;
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({ src, title }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
-
-  const toggle = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (v.paused) { v.play(); setPlaying(true); }
-    else          { v.pause(); setPlaying(false); }
-  };
-
-  return (
-    <div className="media-video-card" onClick={toggle}>
-      <video
-        ref={videoRef}
-        src={src}
-        playsInline
-        controls={playing}
-        className="media-video-card__video"
-        onEnded={() => setPlaying(false)}
-      />
-      {!playing && (
-        <div className="media-video-card__overlay">
-          <div className="media-video-card__play">
-            <Play size={40} fill="white" />
-          </div>
-          <p className="media-video-card__title">{title}</p>
-        </div>
-      )}
-    </div>
-  );
-};
+const VideoCard: React.FC<VideoCardProps> = ({ youtubeUrl, title }) => (
+  <div className="media-video-card">
+    <iframe
+      className="media-video-card__iframe"
+      src={`${youtubeUrl}?rel=0&modestbranding=1`}
+      title={title}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+    <p className="media-video-card__title">{title}</p>
+  </div>
+);
 
 // ───────────────────────────────────────────────────────────────────────────
 const MediaContentPage: React.FC = () => {
@@ -99,8 +78,9 @@ const MediaContentPage: React.FC = () => {
         <div className="container">
           <h2 className="section-title">{translations.mediaContentTitle}</h2>
           <div className="media-video-grid">
-            <VideoCard src={videoNov}    title="Nov" />
-            <VideoCard src={videoBistro} title="Bistro" />
+            {settings.videos.map((v) => (
+              <VideoCard key={v.id} youtubeUrl={v.youtubeUrl} title={v.title} />
+            ))}
           </div>
         </div>
       </section>

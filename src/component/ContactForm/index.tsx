@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import { useTranslationStore } from '../../stores/useTranslationStore';
-import { Mail, Phone, MapPin, Facebook, Instagram, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
+import settings from '../../assets/settings/settings.json';
 import './style.scss';
+
+const socialIconMap: Record<string, React.ReactNode> = {
+  facebook:  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>,
+  instagram: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>,
+};
 
 const ContactForm: React.FC = () => {
   const { translations } = useTranslationStore();
@@ -24,38 +30,37 @@ const ContactForm: React.FC = () => {
     setTimeout(() => { setLoading(false); setSent(true); }, 1200);
   };
 
-  const serviceOptions = [
-    translations.s1Title,
-    translations.s2Title,
-    translations.s3Title,
-    translations.s4Title,
-  ];
+  const serviceOptions = settings.services
+    .filter((s) => s.enabled)
+    .map((s) => s.contactSubject);
 
   const infoItems = [
     {
       icon: <Mail size={20} />,
       label: translations.emailUs,
-      value: translations.emailAddress,
-      href: `mailto:${translations.emailAddress}`,
+      value: settings.business.email,
+      href: `mailto:${settings.business.email}`,
     },
     {
       icon: <Phone size={20} />,
       label: translations.callUs,
-      value: translations.phoneNumber,
-      href: `tel:${translations.phoneNumber.replace(/\s/g, '')}`,
+      value: settings.business.phone,
+      href: `tel:${settings.business.phone.replace(/\s/g, '')}`,
     },
     {
       icon: <MapPin size={20} />,
       label: 'Location',
-      value: translations.locationText,
+      value: settings.business.location,
       href: undefined,
     },
   ];
 
-  const socials = [
-    { icon: <Facebook size={18} />, label: translations.facebookLabel, href: 'https://www.facebook.com/aaronaerialservices', abbr: 'f' },
-    { icon: <Instagram size={18} />, label: translations.instagramLabel, href: 'https://www.instagram.com/aaronaerialservices', abbr: 'ig' },
-  ];
+  const socials = settings.social.map((s) => ({
+    icon: socialIconMap[s.id] ?? null,
+    label: s.label,
+    href: s.url,
+    abbr: s.abbr,
+  }));
 
   return (
     <div className="contact-form-wrap">

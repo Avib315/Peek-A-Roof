@@ -1,0 +1,14 @@
+{
+  "videos": [
+    {
+      "id": "bistro",
+      "title": "Bistro Aerial",
+      "youtubeUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    },
+    {
+      "id": "nov",
+      "title": "Novelino Aerial",
+      "youtubeUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    }
+  ]
+}

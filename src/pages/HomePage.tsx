@@ -5,13 +5,8 @@ import ContactForm from '../component/ContactForm';
 import imgRealEstate   from '../assets/images/genericImages/arial_props_markeing.jpeg';
 import imgRoofInspect  from '../assets/images/genericImages/roofGutterInspection.webp';
 import imgMediaContent from '../assets/images/genericImages/souial-media-for-bis.webp';
+import settings from '../assets/settings/settings.json';
 import './HomePage.scss';
-
-const clientTypes = [
-  'Homeowners','Landlords','Estate Agents','Property Developers','Private Sellers',
-  'Restaurants','Hotels & Venues','Gyms & Studios','Retail & Storefronts',
-  'Event Organisers','Families & Celebrations','Commercial Premises',
-];
 
 const HomePage: React.FC = () => {
   const { translations } = useTranslationStore();
@@ -36,18 +31,8 @@ const HomePage: React.FC = () => {
     { num: '04', img: imgRealEstate,   title: translations.s4Title, tag: translations.s4Tag, desc: translations.s4Desc, cta: translations.s4Cta },
   ];
 
-  const reviews = [
-    { quote: translations.review1Quote, name: translations.review1Name, title: translations.review1Title },
-    { quote: translations.review2Quote, name: translations.review2Name, title: translations.review2Title },
-    { quote: translations.review3Quote, name: translations.review3Name, title: translations.review3Title },
-  ];
-
-  const stats = [
-    { value: '4K',   label: 'HD Quality' },
-    { value: '360°', label: 'Coverage' },
-    { value: 'Fast', label: 'Turnaround' },
-    { value: '✓',    label: 'Fully Insured' },
-  ];
+  const reviews = settings.reviews;
+  const stats   = settings.stats;
 
   const whyPoints = [
     translations.whyPoint1,
@@ -160,7 +145,7 @@ const HomePage: React.FC = () => {
           </h2>
           <div className="cyan-rule" />
           <div className="client-tags">
-            {clientTypes.map((type) => (
+            {settings.clientTypes.map((type) => (
               <span key={type} className="client-tag">{type}</span>
             ))}
           </div>
@@ -174,9 +159,9 @@ const HomePage: React.FC = () => {
           <h2 className="section-title">{translations.trustedBy}</h2>
           <div className="cyan-rule" />
           <div className="reviews-grid">
-            {reviews.map((r, i) => (
-              <div key={i} className="review-card">
-                <div className="review-card__stars">★★★★★</div>
+            {reviews.map((r) => (
+              <div key={r.id} className="review-card">
+                <div className="review-card__stars">{'★'.repeat(r.stars)}</div>
                 <p className="review-card__quote">"{r.quote}"</p>
                 <div className="review-card__author">
                   <strong>{r.name}</strong>

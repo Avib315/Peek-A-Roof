@@ -1,0 +1,110 @@
+{
+  "business": {
+    "name": "AARON AERIAL",
+    "legalName": "Aaron Aerial Services",
+    "tagline": "We fly so you don't have to climb",
+    "email": "info@aaronaerialservices.co.uk",
+    "phone": "+44 7000 000000",
+    "location": "Serving the UK — local & nationwide bookings welcome",
+    "foundedYear": 2024
+  },
+
+  "social": [
+    {
+      "id": "facebook",
+      "label": "Facebook / Aaron Aerial Services",
+      "abbr": "f",
+      "url": "https://www.facebook.com/aaronaerialservices"
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram / @aaronaerialservices",
+      "abbr": "ig",
+      "url": "https://www.instagram.com/aaronaerialservices"
+    }
+  ],
+
+  "videos": [
+    {
+      "id": "bistro",
+      "title": "Bistro Aerial",
+      "youtubeUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    },
+    {
+      "id": "nov",
+      "title": "Novelino Aerial",
+      "youtubeUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    }
+  ],
+
+  "services": [
+    {
+      "id": "roof-inspection",
+      "route": "/roof-inspection",
+      "enabled": true,
+      "contactSubject": "Roof & Gutter Inspection"
+    },
+    {
+      "id": "real-estate",
+      "route": "/real-estate",
+      "enabled": true,
+      "contactSubject": "Aerial Property Marketing"
+    },
+    {
+      "id": "media-content",
+      "route": "/media-content",
+      "enabled": true,
+      "contactSubject": "Social Media for Business"
+    },
+    {
+      "id": "events",
+      "route": null,
+      "enabled": true,
+      "contactSubject": "Special Occasions & Events"
+    }
+  ],
+
+  "reviews": [
+    {
+      "id": 1,
+      "stars": 5,
+      "quote": "Absolutely fantastic service. We had concerns about a few tiles and Aaron sent us clear drone footage within 24 hours. Saved us a fortune — turned out it was a minor fix, not the full repair the roofer quoted us for!",
+      "name": "Sarah M.",
+      "title": "Homeowner, Manchester"
+    },
+    {
+      "id": 2,
+      "stars": 5,
+      "quote": "We used Aaron for aerial shots of a development we were marketing. The footage was stunning — smooth, cinematic and it really made the property stand out. Sold in two weeks. Will use again without question.",
+      "name": "James R.",
+      "title": "Estate Agent, London"
+    },
+    {
+      "id": 3,
+      "stars": 5,
+      "quote": "We booked drone coverage for our venue's social media and the results blew us away. The aerial reels we got have been our best-performing content by a mile. Professional, punctual and great value.",
+      "name": "Priya K.",
+      "title": "Events Venue Manager"
+    }
+  ],
+
+  "stats": [
+    { "value": "4K",   "label": "HD Quality" },
+    { "value": "360°", "label": "Coverage" },
+    { "value": "Fast", "label": "Turnaround" },
+    { "value": "✓",    "label": "Fully Insured" }
+  ],
+
+  "clientTypes": [
+    "Homeowners", "Landlords", "Estate Agents", "Property Developers", "Private Sellers",
+    "Restaurants", "Hotels & Venues", "Gyms & Studios", "Retail & Storefronts",
+    "Event Organisers", "Families & Celebrations", "Commercial Premises"
+  ],
+
+  "features": {
+    "darkModeDefault": true,
+    "showFloatingDrone": true,
+    "showReviewsSection": true,
+    "showClientsSection": true
+  }
+}

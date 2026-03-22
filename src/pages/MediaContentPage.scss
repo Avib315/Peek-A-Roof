@@ -5,6 +5,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: $spacing-xl;
+  margin-top: $spacing-xl;
 
   @include respond-to-max(md) {
     grid-template-columns: 1fr;
@@ -14,72 +15,33 @@
 
 // ── Individual video card ────────────────────────────────────────────────────
 .media-video-card {
-  position: relative;
   border-radius: $border-radius-lg;
   overflow: hidden;
   background: #070c1a;
-  cursor: pointer;
   box-shadow: $shadow-lg;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(79, 195, 247, 0.1);
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: $shadow-xl;
-
-    .media-video-card__play {
-      transform: scale(1.12);
-    }
+    box-shadow: $shadow-xl, 0 0 30px rgba(79, 195, 247, 0.1);
+    border-color: rgba(79, 195, 247, 0.25);
   }
 
-  &__video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  &__iframe {
     display: block;
-  }
-
-  // Overlay shown while paused
-  &__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.75) 0%,
-      rgba(0, 0, 0, 0.2) 60%,
-      transparent 100%
-    );
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: $spacing-md;
-  }
-
-  &__play {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: rgba(0, 119, 204, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 24px rgba(0, 80, 200, 0.6);
-    transition: transform 0.25s ease;
-
-    svg { margin-left: 4px; } // nudge play icon to look centred
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
   }
 
   &__title {
-    position: absolute;
-    bottom: $spacing-lg;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: $white;
-    font-size: $font-size-lg;
-    font-weight: $font-weight-semibold;
-    letter-spacing: 0.5px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    padding: $spacing-md $spacing-lg;
+    color: $text-secondary;
+    font-family: $font-label;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 }
