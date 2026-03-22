@@ -12,16 +12,16 @@
         "eng": "Worried about loose tiles or blocked gutters?"
     },
     "phoneNumber": {
-        "heb": "07354 740445",
-        "eng": "07354 740445"
+        "heb": "+44 7000 000000",
+        "eng": "+44 7000 000000"
     },
     "titleLogo":{
-        "heb": "Peek-A-Roof",
-        "eng": "Peek-A-Roof"
+        "heb": "AARON AERIAL",
+        "eng": "AARON AERIAL"
     },
     "emailAddress": {
-        "heb": "Peek.a.roof@gmail.com",
-        "eng": "Peek.a.roof@gmail.com"
+        "heb": "info@aaronaerialservices.co.uk",
+        "eng": "info@aaronaerialservices.co.uk"
     },
     "description": {
         "heb": "לפני שאתה מזמין מישהו עם סולם ותג מחיר, תן לנו להראות לך בדיוק מה קורה – בלי לחץ ובלי הצעות מכירה אגרסיביות. אנו משתמשים ברחפן באיכות גבוהה במיוחד לצילום הגג שלך מכל זווית. תקבל תמונות חדות וסרטון מקצועי כדי שתוכל לקבל החלטות מושכלות.",
@@ -254,5 +254,49 @@
     "homeServiceCardMedia":{
         "heb":"תוכן אווירי מקצועי לאירועים, פרסומות ועוד",
         "eng":"Professional aerial content for events, commercials and more"
+    },
+    "getInTouch":{
+        "heb":"צור קשר",
+        "eng":"Get in Touch"
+    },
+    "letsWorkTogether":{
+        "heb":"בואו נעבוד יחד",
+        "eng":"Let's Work Together"
+    },
+    "contactFormDesc":{
+        "heb":"מוכן לראות דברים מפרספקטיבה חדשה? מלא את הטופס ונחזור אליך מהר — ללא התחייבות, ללא לחץ.",
+        "eng":"Ready to see things from a new perspective? Fill in the form and we'll get back to you quickly — no obligation, no pressure."
+    },
+    "yourName":{
+        "heb":"השם שלך",
+        "eng":"Your Name"
+    },
+    "yourEmail":{
+        "heb":"האימייל שלך",
+        "eng":"Your Email"
+    },
+    "yourMessage":{
+        "heb":"ההודעה שלך",
+        "eng":"Your Message"
+    },
+    "sendMessage":{
+        "heb":"שלח הודעה",
+        "eng":"Send Message"
+    },
+    "messageSent":{
+        "heb":"ההודעה נשלחה! ניצור קשר בקרוב.",
+        "eng":"Message sent! We'll be in touch soon."
+    },
+    "locationText":{
+        "heb":"משרתים ברחבי הממלכה המאוחדת — הזמנות מקומיות וארציות בברוכות הבאות",
+        "eng":"Serving the UK — local & nationwide bookings welcome"
+    },
+    "facebookLabel":{
+        "heb":"Facebook / Aaron Aerial Services",
+        "eng":"Facebook / Aaron Aerial Services"
+    },
+    "instagramLabel":{
+        "heb":"Instagram / @aaronaerialservices",
+        "eng":"Instagram / @aaronaerialservices"
     }
 }

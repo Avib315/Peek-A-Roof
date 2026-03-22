@@ -1,0 +1,279 @@
+@import "../../styles/variables.scss";
+
+// ── Wrapper ──────────────────────────────────────────────────────────────────
+.contact-form-wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+// ── Two-column grid ──────────────────────────────────────────────────────────
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: $spacing-4xl;
+  align-items: start;
+
+  @include respond-to-max(md) {
+    grid-template-columns: 1fr;
+    gap: $spacing-3xl;
+  }
+}
+
+// ── Eyebrow + headings ───────────────────────────────────────────────────────
+.cf-eyebrow {
+  display: block;
+  font-family: $font-label;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $accent-cyan;
+  margin-bottom: $spacing-sm;
+}
+
+.cf-title {
+  font-family: $font-heading;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.05em;
+  color: $white;
+  line-height: 1.05;
+  margin-bottom: $spacing-lg;
+
+  [dir="rtl"] & { font-family: $font-hebrew; letter-spacing: 0; }
+}
+
+.cf-desc {
+  font-size: $font-size-base;
+  line-height: 1.8;
+  color: $text-secondary;
+  margin-bottom: $spacing-2xl;
+  max-width: 480px;
+}
+
+// ── Success state ────────────────────────────────────────────────────────────
+.cf-success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-md;
+  padding: $spacing-2xl;
+  border: 1px solid rgba(79, 195, 247, 0.3);
+  border-radius: $border-radius-lg;
+  background: rgba(79, 195, 247, 0.06);
+  color: $accent-cyan;
+
+  p {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+    color: $white;
+    margin: 0;
+  }
+}
+
+// ── Form ─────────────────────────────────────────────────────────────────────
+.cf-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.cf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-family: $font-label;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $text-secondary;
+  }
+
+  input,
+  textarea {
+    background: rgba(12, 18, 37, 0.8);
+    border: 1px solid rgba(79, 195, 247, 0.15);
+    border-radius: 4px;
+    color: $text-primary;
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    padding: 14px 16px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    outline: none;
+    resize: none;
+
+    &::placeholder { color: $text-muted; }
+
+    &:focus {
+      border-color: rgba(79, 195, 247, 0.55);
+      box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.08);
+    }
+  }
+
+  textarea {
+    min-height: 130px;
+  }
+}
+
+// ── Submit button ────────────────────────────────────────────────────────────
+.cf-submit {
+  align-self: flex-start;
+  padding: 14px 36px;
+  background: linear-gradient(135deg, #0077cc, #003873);
+  color: $white;
+  border: 1.5px solid rgba(79, 195, 247, 0.4);
+  border-radius: 4px;
+  font-family: $font-label;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.28s ease;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  min-height: 50px;
+
+  &:hover:not(:disabled) {
+    background: transparent;
+    color: $accent-cyan;
+    border-color: $accent-cyan;
+    box-shadow: 0 0 20px rgba(79, 195, 247, 0.25);
+    transform: translateY(-2px);
+  }
+
+  &:disabled { opacity: 0.7; cursor: not-allowed; }
+}
+
+// Loading spinner inside button
+.cf-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: $white;
+  border-radius: 50%;
+  animation: cfSpin 0.7s linear infinite;
+}
+
+@keyframes cfSpin {
+  to { transform: rotate(360deg); }
+}
+
+// ── Right panel ──────────────────────────────────────────────────────────────
+.contact-form-right {
+  padding-top: 80px; // align with form body below the title
+
+  @include respond-to-max(md) { padding-top: 0; }
+}
+
+// ── Info list ────────────────────────────────────────────────────────────────
+.cf-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+  margin-bottom: $spacing-3xl;
+}
+
+.cf-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-md;
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid rgba(79, 195, 247, 0.25);
+    background: rgba(79, 195, 247, 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $accent-cyan;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  &__label {
+    font-family: $font-label;
+    font-size: 11px;
+    font-weight: $font-weight-medium;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $text-muted;
+  }
+
+  &__value {
+    font-size: $font-size-base;
+    color: $text-primary;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:is(a):hover { color: $accent-cyan; }
+  }
+}
+
+// ── Social links ─────────────────────────────────────────────────────────────
+.cf-socials {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  border-top: 1px solid rgba(79, 195, 247, 0.1);
+  padding-top: $spacing-xl;
+}
+
+.cf-social-link {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  text-decoration: none;
+  color: $text-secondary;
+  transition: color 0.22s ease;
+  padding: $spacing-sm 0;
+
+  &:hover {
+    color: $accent-cyan;
+    .cf-social-link__abbr { border-color: $accent-cyan; color: $accent-cyan; }
+    .cf-social-link__icon { color: $accent-cyan; }
+  }
+
+  &__abbr {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border: 1px solid rgba(79, 195, 247, 0.2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-label;
+    font-size: 11px;
+    font-weight: $font-weight-bold;
+    letter-spacing: 0.05em;
+    color: $text-secondary;
+    transition: border-color 0.22s ease, color 0.22s ease;
+  }
+
+  &__icon {
+    color: $text-muted;
+    transition: color 0.22s ease;
+    line-height: 0;
+  }
+
+  &__label {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+  }
+}

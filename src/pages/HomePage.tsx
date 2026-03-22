@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import { useTranslationStore } from '../stores/useTranslationStore';
 import DroneScene from '../component/DroneScene';
 import ContactUs from '../component/ContactUs';
+import ContactForm from '../component/ContactForm';
 import ImagesBrowser from '../component/ImagesBrowser';
+import imgRealEstate    from '../assets/images/genericImages/arial_props_markeing.jpeg';
+import imgRoofInspect   from '../assets/images/genericImages/roofGutterInspection.webp';
+import imgMediaContent  from '../assets/images/genericImages/souial-media-for-bis.webp';
 import './HomePage.scss';
 
 const HomePage: React.FC = () => {
@@ -38,7 +42,7 @@ const HomePage: React.FC = () => {
         <div className="home-hero__overlay" />
         <div className="home-hero__glow" />
         <div className="home-hero__content fade-in">
-          <span className="home-hero__eyebrow">Peek-A-Roof · Drone Services</span>
+          <span className="home-hero__eyebrow">AARON AERIAL · Drone Services</span>
           <h1 className="home-hero__title">{translations.title}</h1>
           <p className="home-hero__subtitle">{translations.secondTitle}</p>
           <div className="home-hero__actions">
@@ -76,8 +80,8 @@ const HomePage: React.FC = () => {
 
             {/* Real Estate */}
             <Link to="/real-estate" className="service-card service-card--blue">
-              <div className="service-card__drone-preview">
-                <DroneScene variant="mini" autoRotate />
+              <div className="service-card__img">
+                <img src={imgRealEstate} alt="Aerial real estate filming" />
               </div>
               <div className="service-card__body">
                 <h3>{translations.realEstateTitle}</h3>
@@ -88,8 +92,8 @@ const HomePage: React.FC = () => {
 
             {/* Roof Inspection */}
             <Link to="/roof-inspection" className="service-card service-card--teal">
-              <div className="service-card__drone-preview">
-                <DroneScene variant="mini" autoRotate />
+              <div className="service-card__img">
+                <img src={imgRoofInspect} alt="Roof gutter inspection" />
               </div>
               <div className="service-card__body">
                 <h3>{translations.roofInspectionTitle}</h3>
@@ -100,8 +104,8 @@ const HomePage: React.FC = () => {
 
             {/* Media Content */}
             <Link to="/media-content" className="service-card service-card--purple">
-              <div className="service-card__drone-preview">
-                <DroneScene variant="mini" autoRotate />
+              <div className="service-card__img">
+                <img src={imgMediaContent} alt="Media content production" />
               </div>
               <div className="service-card__body">
                 <h3>{translations.mediaContentTitle}</h3>
@@ -127,7 +131,7 @@ const HomePage: React.FC = () => {
       {/* ── Contact ───────────────────────────────────────── */}
       <section id="contact" className="home-contact fade-in">
         <div className="container">
-          <ContactUs />
+          <ContactForm />
         </div>
       </section>
 

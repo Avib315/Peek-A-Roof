@@ -73,6 +73,17 @@ interface TranslationsObj {
     homeServiceCardReal:TranslationsObj;
     homeServiceCardRoof:TranslationsObj;
     homeServiceCardMedia:TranslationsObj;
+    getInTouch:TranslationsObj;
+    letsWorkTogether:TranslationsObj;
+    contactFormDesc:TranslationsObj;
+    yourName:TranslationsObj;
+    yourEmail:TranslationsObj;
+    yourMessage:TranslationsObj;
+    sendMessage:TranslationsObj;
+    messageSent:TranslationsObj;
+    locationText:TranslationsObj;
+    facebookLabel:TranslationsObj;
+    instagramLabel:TranslationsObj;
   }
 
 
@@ -145,6 +156,17 @@ interface TranslationsObj {
     homeServiceCardReal:string;
     homeServiceCardRoof:string;
     homeServiceCardMedia:string;
+    getInTouch:string;
+    letsWorkTogether:string;
+    contactFormDesc:string;
+    yourName:string;
+    yourEmail:string;
+    yourMessage:string;
+    sendMessage:string;
+    messageSent:string;
+    locationText:string;
+    facebookLabel:string;
+    instagramLabel:string;
   }
 
   export type { TranslationsKeys, TranslationsObj  , TranslationsStrings , TranslationsLangs};
