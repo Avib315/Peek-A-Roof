@@ -198,10 +198,20 @@ const BodyGlowStrip: React.FC = () => {
 };
 
 // ── Main Drone Model ────────────────────────────────────────────────────────
-const DroneModel: React.FC = () => {
+interface DroneModelProps { scale?: number; yawRef?: React.RefObject<number>; }
+
+const DroneModel: React.FC<DroneModelProps> = ({ scale = 1, yawRef }) => {
+  const groupRef = useRef<THREE.Group>(null);
+
+  useFrame(() => {
+    if (groupRef.current && yawRef) {
+      groupRef.current.rotation.y = (yawRef.current ?? 0) * (Math.PI / 180);
+    }
+  });
+
   return (
     <Float speed={1.2} rotationIntensity={0.12} floatIntensity={0.45}>
-      <group>
+      <group ref={groupRef} scale={scale}>
         {/* Top plate — RoundedBox for premium feel */}
         <RoundedBox args={[0.26, 0.038, 0.26]} radius={0.018} smoothness={4} position={[0, 0.022, 0]}>
           <meshPhysicalMaterial
@@ -264,9 +274,10 @@ const DroneModel: React.FC = () => {
 interface DroneSceneProps {
   variant?: 'hero' | 'page' | 'mini';
   autoRotate?: boolean;
+  yawRef?: React.RefObject<number>;
 }
 
-const DroneScene: React.FC<DroneSceneProps> = ({ variant = 'hero', autoRotate = false }) => {
+const DroneScene: React.FC<DroneSceneProps> = ({ variant = 'hero', autoRotate = false, yawRef }) => {
   const isMini = variant === 'mini';
 
   return (
@@ -308,7 +319,7 @@ const DroneScene: React.FC<DroneSceneProps> = ({ variant = 'hero', autoRotate = 
           )}
 
           {/* Drone */}
-          <DroneModel />
+          <DroneModel scale={isMini ? 0.65 : 1} yawRef={yawRef} />
 
           {/* Controls */}
           <OrbitControls

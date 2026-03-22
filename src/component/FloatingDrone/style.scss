@@ -15,20 +15,6 @@
     opacity: 1;
   }
 
-  // Elliptical glow that sits beneath the drone
-  &__shadow {
-    position: absolute;
-    bottom: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 64px;
-    height: 14px;
-    border-radius: 50%;
-    background: radial-gradient(ellipse at center, rgba(79, 195, 247, 0.5) 0%, transparent 70%);
-    animation: droneShadowPulse 2s ease-in-out infinite;
-    pointer-events: none;
-  }
-
   // On very small screens shrink a touch more
   @include respond-to-max(sm) {
     width:  80px;
@@ -36,7 +22,3 @@
   }
 }
 
-@keyframes droneShadowPulse {
-  0%, 100% { opacity: 0.45; transform: translateX(-50%) scaleX(1);    }
-  50%       { opacity: 1;    transform: translateX(-50%) scaleX(1.25); }
-}

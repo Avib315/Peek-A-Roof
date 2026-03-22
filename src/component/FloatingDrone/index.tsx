@@ -4,7 +4,7 @@ import './style.scss';
 
 const DRONE_SIZE = 100; // px – rendered canvas size
 const TOP_START  = 90;  // px from top  (just below header)
-const SIDE_PAD   = 16;  // px from edges
+const SIDE_PAD   = 16;  // px from right edge
 
 const FloatingDrone: React.FC = () => {
   const [left, setLeft]       = useState(0);
@@ -16,12 +16,14 @@ const FloatingDrone: React.FC = () => {
   const rafRef        = useRef<number>(0);
   const targetSY      = useRef(0);
   const smoothSY      = useRef(0);
+  const yawRef        = useRef(0);
 
   useEffect(() => {
-    // Initialise position immediately so there's no jump on first render
-    setLeft(window.innerWidth - DRONE_SIZE - SIDE_PAD);
+    // Fixed horizontal position on the right edge
+    const fixedLeft = window.innerWidth - DRONE_SIZE - SIDE_PAD;
+    setLeft(fixedLeft);
     setTop(TOP_START);
-    setVisible(true); // visible from page load
+    setVisible(true);
 
     const onScroll = () => { targetSY.current = window.scrollY; };
 
@@ -31,20 +33,18 @@ const FloatingDrone: React.FC = () => {
       smoothSY.current = lerp(smoothSY.current, targetSY.current, 0.055);
       const sy = smoothSY.current;
 
-      const maxScroll  = Math.max(1, document.body.scrollHeight - window.innerHeight);
-      const progress   = Math.min(1, Math.max(0, sy / maxScroll));
+      const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
+      const progress  = Math.min(1, Math.max(0, sy / maxScroll));
 
-      // Diagonal: top-right → bottom-left
-      const leftStart  = window.innerWidth - DRONE_SIZE - SIDE_PAD;
-      const leftEnd    = SIDE_PAD;
-      const topEnd     = window.innerHeight - DRONE_SIZE - SIDE_PAD;
+      // Straight vertical: top → bottom, fixed on right side
+      const topEnd = window.innerHeight - DRONE_SIZE - SIDE_PAD;
+      setLeft(window.innerWidth - DRONE_SIZE - SIDE_PAD);
+      setTop( lerp(TOP_START, topEnd, progress));
 
-      setLeft(lerp(leftStart,  leftEnd,  progress));
-      setTop( lerp(TOP_START,  topEnd,   progress));
-
-      // Tilt the drone as it "flies" — bank in direction of travel
-      setBank(  Math.sin(sy * 0.004) * 12 - progress * 8); // slight persistent left-bank
-      setPitch( Math.cos(sy * 0.003) * 6);
+      // Gentle hover tilt; yaw drives the 3D scene via ref
+      setBank(  Math.sin(sy * 0.003) * 4);
+      setPitch( Math.cos(sy * 0.002) * 3);
+      yawRef.current = sy * 0.04;
 
       rafRef.current = requestAnimationFrame(tick);
     };
@@ -67,8 +67,7 @@ const FloatingDrone: React.FC = () => {
         transform: `perspective(500px) rotateZ(${bank}deg) rotateX(${pitch}deg)`,
       }}
     >
-      <DroneScene variant="mini" autoRotate={false} />
-      <div className="floating-drone__shadow" />
+      <DroneScene variant="mini" autoRotate={false} yawRef={yawRef} />
     </div>
   );
 };
