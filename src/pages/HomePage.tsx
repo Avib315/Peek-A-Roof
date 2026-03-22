@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslationStore } from '../stores/useTranslationStore';
 import DroneScene from '../component/DroneScene';
-import ContactUs from '../component/ContactUs';
 import ContactForm from '../component/ContactForm';
 import ImagesBrowser from '../component/ImagesBrowser';
 import imgRealEstate    from '../assets/images/genericImages/arial_props_markeing.jpeg';
