@@ -1,39 +1,48 @@
 // variables.scss
 
 // ============================================
-// COLORS
+// COLORS – Dark Cinematic Theme
 // ============================================
-$primary-color: #003873;
-$secondary-color: #6c757d;
-$accent-color: #28a745;
-$dark-color: #212529;
-$light-color: #f8f9fa;
-$white: #ffffff;
-$black: #000000;
+$primary-color:   #003873;
+$accent-cyan:     #4fc3f7;
+$accent-gold:     #f0c060;
+$dark-color:      #212529;
+$light-color:     #f8f9fa;
+$white:           #ffffff;
+$black:           #000000;
 
 // Background Colors
-$bg-primary: #ffffff;
-$bg-secondary: #f4f6f8;
-$bg-dark: rgba(0, 0, 0, 0.9);
-$bg-overlay: rgba(0, 0, 0, 0.5);
+$bg-deep:         #060810;
+$bg-primary:      #060810;
+$bg-secondary:    #0c1225;
+$bg-card:         #0f1830;
+$bg-dark:         rgba(0, 0, 0, 0.9);
+$bg-overlay:      rgba(0, 0, 0, 0.5);
+$bg-glass:        rgba(12, 18, 37, 0.75);
 
 // Text Colors
-$text-primary: #333333;
-$text-secondary: #666666;
-$text-light: #ffffff;
-$text-muted: #999999;
+$text-primary:    #f0f4fa;
+$text-secondary:  #8899aa;
+$text-light:      #ffffff;
+$text-muted:      #4a5a6a;
+
+// Border
+$border-cyan:     rgba(79, 195, 247, 0.15);
+$border-cyan-hover: rgba(79, 195, 247, 0.4);
 
 // ============================================
 // TYPOGRAPHY
 // ============================================
-$font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-primary:   'DM Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-heading:   'Bebas Neue', cursive;
+$font-label:     'Montserrat', 'Arial', sans-serif;
 $font-secondary: 'Arial', sans-serif;
-$font-hebrew: 'Assistant', 'Heebo', sans-serif;
+$font-hebrew:    'Assistant', 'Heebo', sans-serif;
 
 $font-size-base: 16px;
-$font-size-sm: 14px;
-$font-size-lg: 18px;
-$font-size-xl: 20px;
+$font-size-sm:   14px;
+$font-size-lg:   18px;
+$font-size-xl:   20px;
 
 $h1-size: 2.5rem;
 $h2-size: 2rem;
@@ -42,128 +51,104 @@ $h4-size: 1.5rem;
 $h5-size: 1.25rem;
 $h6-size: 1rem;
 
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-medium: 500;
+$font-weight-light:    300;
+$font-weight-normal:   400;
+$font-weight-medium:   500;
 $font-weight-semibold: 600;
-$font-weight-bold: 700;
+$font-weight-bold:     700;
 
-$line-height-base: 1.6;
-$line-height-heading: 1.2;
+$line-height-base:    1.6;
+$line-height-heading: 1.1;
 
 // ============================================
 // SPACING
 // ============================================
-$spacing-xs: 0.25rem;   // 4px
-$spacing-sm: 0.5rem;    // 8px
-$spacing-md: 1rem;      // 16px
-$spacing-lg: 1.5rem;    // 24px
-$spacing-xl: 2rem;      // 32px
-$spacing-2xl: 3rem;     // 48px
-$spacing-3xl: 4rem;     // 64px
-$spacing-4xl: 6rem;     // 96px
+$spacing-xs:  0.25rem;
+$spacing-sm:  0.5rem;
+$spacing-md:  1rem;
+$spacing-lg:  1.5rem;
+$spacing-xl:  2rem;
+$spacing-2xl: 3rem;
+$spacing-3xl: 4rem;
+$spacing-4xl: 6rem;
 
 // ============================================
 // LAYOUT
 // ============================================
 $container-max-width: 1200px;
-$container-padding: 1rem;
+$container-padding:   1rem;
 
-$header-height: 80px;
+$header-height:         80px;
 $header-height-scrolled: 60px;
 
 // ============================================
-// BREAKPOINTS (Mobile First)
+// BREAKPOINTS
 // ============================================
-$breakpoint-xs: 0;
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
+$breakpoint-xs:  0;
+$breakpoint-sm:  576px;
+$breakpoint-md:  768px;
+$breakpoint-lg:  992px;
+$breakpoint-xl:  1200px;
 $breakpoint-xxl: 1400px;
 
-// ============================================
-// RESPONSIVE MIXINS
-// ============================================
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == xs {
-    @media (min-width: $breakpoint-xs) { @content; }
-  }
-  @else if $breakpoint == sm {
-    @media (min-width: $breakpoint-sm) { @content; }
-  }
-  @else if $breakpoint == md {
-    @media (min-width: $breakpoint-md) { @content; }
-  }
-  @else if $breakpoint == lg {
-    @media (min-width: $breakpoint-lg) { @content; }
-  }
-  @else if $breakpoint == xl {
-    @media (min-width: $breakpoint-xl) { @content; }
-  }
-  @else if $breakpoint == xxl {
-    @media (min-width: $breakpoint-xxl) { @content; }
-  }
+  @if      $breakpoint == xs  { @media (min-width: $breakpoint-xs)  { @content; } }
+  @else if $breakpoint == sm  { @media (min-width: $breakpoint-sm)  { @content; } }
+  @else if $breakpoint == md  { @media (min-width: $breakpoint-md)  { @content; } }
+  @else if $breakpoint == lg  { @media (min-width: $breakpoint-lg)  { @content; } }
+  @else if $breakpoint == xl  { @media (min-width: $breakpoint-xl)  { @content; } }
+  @else if $breakpoint == xxl { @media (min-width: $breakpoint-xxl) { @content; } }
 }
 
-// Max-width media queries
 @mixin respond-to-max($breakpoint) {
-  @if $breakpoint == xs {
-    @media (max-width: #{$breakpoint-sm - 1px}) { @content; }
-  }
-  @else if $breakpoint == sm {
-    @media (max-width: #{$breakpoint-md - 1px}) { @content; }
-  }
-  @else if $breakpoint == md {
-    @media (max-width: #{$breakpoint-lg - 1px}) { @content; }
-  }
-  @else if $breakpoint == lg {
-    @media (max-width: #{$breakpoint-xl - 1px}) { @content; }
-  }
-  @else if $breakpoint == xl {
-    @media (max-width: #{$breakpoint-xxl - 1px}) { @content; }
-  }
+  @if      $breakpoint == xs  { @media (max-width: #{$breakpoint-sm  - 1px}) { @content; } }
+  @else if $breakpoint == sm  { @media (max-width: #{$breakpoint-md  - 1px}) { @content; } }
+  @else if $breakpoint == md  { @media (max-width: #{$breakpoint-lg  - 1px}) { @content; } }
+  @else if $breakpoint == lg  { @media (max-width: #{$breakpoint-xl  - 1px}) { @content; } }
+  @else if $breakpoint == xl  { @media (max-width: #{$breakpoint-xxl - 1px}) { @content; } }
 }
 
 // ============================================
-// TRANSITIONS & ANIMATIONS
+// TRANSITIONS
 // ============================================
 $transition-fast: 0.2s ease;
 $transition-base: 0.3s ease;
 $transition-slow: 0.5s ease;
 
 $ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-$ease-out: cubic-bezier(0.0, 0, 0.2, 1);
-$ease-in: cubic-bezier(0.4, 0, 1, 1);
+$ease-out:    cubic-bezier(0.0, 0, 0.2, 1);
+$ease-in:     cubic-bezier(0.4, 0, 1, 1);
 
 // ============================================
 // BORDERS & RADIUS
 // ============================================
-$border-radius-sm: 0.25rem;
-$border-radius-base: 0.5rem;
-$border-radius-lg: 1rem;
-$border-radius-xl: 1.5rem;
+$border-radius-sm:    0.25rem;
+$border-radius-base:  0.5rem;
+$border-radius-lg:    1rem;
+$border-radius-xl:    1.5rem;
 $border-radius-round: 50%;
 
 $border-width: 1px;
-$border-color: #dee2e6;
+$border-color: rgba(79, 195, 247, 0.12);
 
 // ============================================
-// SHADOWS
+// SHADOWS / GLOWS
 // ============================================
-$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-$shadow-base: 0 4px 6px rgba(0, 0, 0, 0.1);
-$shadow-md: 0 6px 12px rgba(0, 0, 0, 0.15);
-$shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2);
-$shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.25);
+$shadow-sm:   0 2px 4px rgba(0, 0, 0, 0.4);
+$shadow-base: 0 4px 12px rgba(0, 0, 0, 0.5);
+$shadow-md:   0 8px 24px rgba(0, 0, 0, 0.6);
+$shadow-lg:   0 12px 32px rgba(0, 0, 0, 0.7);
+$shadow-xl:   0 20px 50px rgba(0, 0, 0, 0.8);
+$glow-cyan:   0 0 30px rgba(79, 195, 247, 0.2);
+$glow-cyan-lg: 0 0 60px rgba(79, 195, 247, 0.25), 0 20px 50px rgba(0, 0, 0, 0.8);
 
 // ============================================
-// Z-INDEX LAYERS
+// Z-INDEX
 // ============================================
-$z-index-dropdown: 1000;
-$z-index-sticky: 1020;
-$z-index-fixed: 1030;
+$z-index-dropdown:       1000;
+$z-index-sticky:         1020;
+$z-index-fixed:          1030;
 $z-index-modal-backdrop: 1040;
-$z-index-modal: 1050;
-$z-index-popover: 1060;
-$z-index-tooltip: 1070;
+$z-index-modal:          1050;
+$z-index-popover:        1060;
+$z-index-tooltip:        1070;

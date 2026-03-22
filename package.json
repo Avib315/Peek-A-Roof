@@ -10,10 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/three": "^0.183.1",
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^7.13.1",
     "sass": "^1.93.2",
+    "three": "^0.183.2",
     "zustand": "^5.0.8"
   },
   "devDependencies": {

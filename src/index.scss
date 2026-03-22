@@ -45,6 +45,18 @@ body {
   }
 }
 
+// ── Cinematic heading font ──────────────────
+h1, h2 {
+  font-family: $font-heading;
+  letter-spacing: 0.04em;
+  line-height: $line-height-heading;
+
+  [dir="rtl"] & {
+    font-family: $font-hebrew;
+    letter-spacing: 0;
+  }
+}
+
 // ============================================
 // TYPOGRAPHY
 // ============================================
@@ -112,12 +124,12 @@ p {
 }
 
 a {
-  color: $primary-color;
+  color: $accent-cyan;
   text-decoration: none;
   transition: color $transition-fast;
-  
+
   &:hover {
-    color: darken($primary-color, 10%);
+    color: $white;
   }
 }
 
@@ -397,18 +409,18 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $text-secondary;
+  background: rgba(79, 195, 247, 0.25);
   border-radius: $border-radius-base;
-  
+
   &:hover {
-    background: $text-primary;
+    background: rgba(79, 195, 247, 0.5);
   }
 }
 
 // Firefox scrollbar
 * {
   scrollbar-width: thin;
-  scrollbar-color: $text-secondary $bg-secondary;
+  scrollbar-color: rgba(79, 195, 247, 0.25) $bg-secondary;
 }
 
 // ============================================

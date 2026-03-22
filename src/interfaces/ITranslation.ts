@@ -3,7 +3,7 @@ interface TranslationsObj {
     heb: string;
     eng: string;
   }
-  type TranslationsLangs = "he" | "en" 
+  type TranslationsLangs = "he" | "en"
   interface TranslationsKeys {
     title: TranslationsObj;
     secondTitle: TranslationsObj;
@@ -25,11 +25,59 @@ interface TranslationsObj {
     allRightReserved:TranslationsObj;
     callUs:TranslationsObj;
     emailUs:TranslationsObj;
+    ourServices:TranslationsObj;
+    learnMore:TranslationsObj;
+    bookNow:TranslationsObj;
+    backToHome:TranslationsObj;
+    whyChooseUs:TranslationsObj;
+    howItWorks:TranslationsObj;
+    realEstateNav:TranslationsObj;
+    roofInspectionNav:TranslationsObj;
+    mediaContentNav:TranslationsObj;
+    realEstateTitle:TranslationsObj;
+    realEstateSubtitle:TranslationsObj;
+    realEstateDesc:TranslationsObj;
+    realEstateFeature1:TranslationsObj;
+    realEstateFeature1Desc:TranslationsObj;
+    realEstateFeature2:TranslationsObj;
+    realEstateFeature2Desc:TranslationsObj;
+    realEstateFeature3:TranslationsObj;
+    realEstateFeature3Desc:TranslationsObj;
+    roofInspectionTitle:TranslationsObj;
+    roofInspectionSubtitle:TranslationsObj;
+    roofInspectionDesc:TranslationsObj;
+    roofFeature1:TranslationsObj;
+    roofFeature1Desc:TranslationsObj;
+    roofFeature2:TranslationsObj;
+    roofFeature2Desc:TranslationsObj;
+    roofFeature3:TranslationsObj;
+    roofFeature3Desc:TranslationsObj;
+    step1:TranslationsObj;
+    step1Title:TranslationsObj;
+    step1Desc:TranslationsObj;
+    step2:TranslationsObj;
+    step2Title:TranslationsObj;
+    step2Desc:TranslationsObj;
+    step3:TranslationsObj;
+    step3Title:TranslationsObj;
+    step3Desc:TranslationsObj;
+    mediaContentTitle:TranslationsObj;
+    mediaContentSubtitle:TranslationsObj;
+    mediaContentDesc:TranslationsObj;
+    mediaFeature1:TranslationsObj;
+    mediaFeature1Desc:TranslationsObj;
+    mediaFeature2:TranslationsObj;
+    mediaFeature2Desc:TranslationsObj;
+    mediaFeature3:TranslationsObj;
+    mediaFeature3Desc:TranslationsObj;
+    homeServiceCardReal:TranslationsObj;
+    homeServiceCardRoof:TranslationsObj;
+    homeServiceCardMedia:TranslationsObj;
   }
-  
-  
+
+
   interface TranslationsStrings {
-    titleLogo:string
+    titleLogo:string;
     title: string;
     secondTitle: string;
     question: string;
@@ -43,13 +91,60 @@ interface TranslationsObj {
     phoneNumber:string;
     emailAddress:string;
     contactTitle:string;
-    contactDescription:string
+    contactDescription:string;
     getQuote:string;
     recentImages:string;
     allRightReserved:string;
     callUs:string;
     emailUs:string;
+    ourServices:string;
+    learnMore:string;
+    bookNow:string;
+    backToHome:string;
+    whyChooseUs:string;
+    howItWorks:string;
+    realEstateNav:string;
+    roofInspectionNav:string;
+    mediaContentNav:string;
+    realEstateTitle:string;
+    realEstateSubtitle:string;
+    realEstateDesc:string;
+    realEstateFeature1:string;
+    realEstateFeature1Desc:string;
+    realEstateFeature2:string;
+    realEstateFeature2Desc:string;
+    realEstateFeature3:string;
+    realEstateFeature3Desc:string;
+    roofInspectionTitle:string;
+    roofInspectionSubtitle:string;
+    roofInspectionDesc:string;
+    roofFeature1:string;
+    roofFeature1Desc:string;
+    roofFeature2:string;
+    roofFeature2Desc:string;
+    roofFeature3:string;
+    roofFeature3Desc:string;
+    step1:string;
+    step1Title:string;
+    step1Desc:string;
+    step2:string;
+    step2Title:string;
+    step2Desc:string;
+    step3:string;
+    step3Title:string;
+    step3Desc:string;
+    mediaContentTitle:string;
+    mediaContentSubtitle:string;
+    mediaContentDesc:string;
+    mediaFeature1:string;
+    mediaFeature1Desc:string;
+    mediaFeature2:string;
+    mediaFeature2Desc:string;
+    mediaFeature3:string;
+    mediaFeature3Desc:string;
+    homeServiceCardReal:string;
+    homeServiceCardRoof:string;
+    homeServiceCardMedia:string;
   }
-  
+
   export type { TranslationsKeys, TranslationsObj  , TranslationsStrings , TranslationsLangs};
-  

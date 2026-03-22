@@ -1,70 +1,258 @@
-
-
-    {
-        "title": {
-            "heb": "ראה את הגג שלך מבלי לעזוב את הקרקע",
-            "eng": "SEE YOUR ROOF WITHOUT LEAVING THE GROUND"
-        },
-        "secondTitle": {
-            "heb": "הגג שלך לא ידוע? בדוק אותו באמצעות רחפן",
-            "eng": "ROOF UNKNOWN? CHECK IT BY DRONE"
-        },
-        "question": {
-            "heb": "מודאג מאריחים רופפים?",
-            "eng": "Worried about loose tiles or blocked gutters?"
-        },
-        "phoneNumber": {
-            "heb": "07354 740445",
-            "eng": "07354 740445"
-        },
-        "titleLogo":{
-            "heb": "Peek-A-Roof",
-            "eng": "Peek-A-Roof"
-
-        },
-        "emailAddress": {
-            "heb": "Peek.a.roof@gmail.com",
-            "eng": "Peek.a.roof@gmail.com"
-        },
-        "description": {
-            "heb": "לפני שאתה מזמין מישהו עם סולם ותג מחיר, תן לנו להראות לך בדיוק מה קורה – בלי לחץ ובלי הצעות מכירה אגרסיביות. אנו משתמשים ברחפן באיכות גבוהה במיוחד לצילום הגג שלך מכל זווית. תקבל תמונות חדות וסרטון מקצועי כדי שתוכל לקבל החלטות מושכלות.",
-            "eng": "Before calling someone with a ladder and a price tag, let us show you exactly what's going on — no pressure and no pushy quotes. We use a high-definition drone with outstanding quality and stability to photograph and film your roof from every angle. You get clear images and professional footage so you can make informed decisions."
-        },
-        "footer": {
-            "heb": "מושלם עבור בעלי בתים, משכירים וכל מי שרוצה שקט נפשי מבלי לעזוב את הקרקע. אנחנו טסים כדי שאתה לא תצטרך לטפס.",
-            "eng": "Perfect for homeowners, landlords and anyone who wants peace of mind without leaving the ground. We fly so you don't have to climb."
-        },
-        "home":{
-            "heb":"בית",
-            "eng":"Home"
-        },
-        "gallery":{
-            "heb":"גלריה",
-            "eng":"Gallery"
-        },
-        "contact":{
-            "heb":"צור קשר",
-            "eng":"Contact"
-        },
-        "getQuote":{
-            "heb":"קבל הצעת מחיר",
-            "eng":"Get Free Quote"
-        },
-        "recentImages":{
-            "heb":"בדיקות גג אחרונות",
-            "eng":"Recent Roof Inspections"
-        },
-        "allRightReserved":{
-            "heb":"כל הזכויות שמורות",
-            "eng":"All Rights Reserved"
-        },
-        "callUs":{
-              "heb":"התקשר אלינו",
-            "eng":"Call Us"
-        },
-        "emailUs":{
-              "heb":"שלח מייל",
-            "eng":"Email Us"
-        }
-
+{
+    "title": {
+        "heb": "ראה את הגג שלך מבלי לעזוב את הקרקע",
+        "eng": "SEE YOUR ROOF WITHOUT LEAVING THE GROUND"
+    },
+    "secondTitle": {
+        "heb": "הגג שלך לא ידוע? בדוק אותו באמצעות רחפן",
+        "eng": "ROOF UNKNOWN? CHECK IT BY DRONE"
+    },
+    "question": {
+        "heb": "מודאג מאריחים רופפים?",
+        "eng": "Worried about loose tiles or blocked gutters?"
+    },
+    "phoneNumber": {
+        "heb": "07354 740445",
+        "eng": "07354 740445"
+    },
+    "titleLogo":{
+        "heb": "Peek-A-Roof",
+        "eng": "Peek-A-Roof"
+    },
+    "emailAddress": {
+        "heb": "Peek.a.roof@gmail.com",
+        "eng": "Peek.a.roof@gmail.com"
+    },
+    "description": {
+        "heb": "לפני שאתה מזמין מישהו עם סולם ותג מחיר, תן לנו להראות לך בדיוק מה קורה – בלי לחץ ובלי הצעות מכירה אגרסיביות. אנו משתמשים ברחפן באיכות גבוהה במיוחד לצילום הגג שלך מכל זווית. תקבל תמונות חדות וסרטון מקצועי כדי שתוכל לקבל החלטות מושכלות.",
+        "eng": "Before calling someone with a ladder and a price tag, let us show you exactly what's going on — no pressure and no pushy quotes. We use a high-definition drone with outstanding quality and stability to photograph and film your roof from every angle. You get clear images and professional footage so you can make informed decisions."
+    },
+    "footer": {
+        "heb": "מושלם עבור בעלי בתים, משכירים וכל מי שרוצה שקט נפשי מבלי לעזוב את הקרקע. אנחנו טסים כדי שאתה לא תצטרך לטפס.",
+        "eng": "Perfect for homeowners, landlords and anyone who wants peace of mind without leaving the ground. We fly so you don't have to climb."
+    },
+    "home":{
+        "heb":"בית",
+        "eng":"Home"
+    },
+    "gallery":{
+        "heb":"גלריה",
+        "eng":"Gallery"
+    },
+    "contact":{
+        "heb":"צור קשר",
+        "eng":"Contact"
+    },
+    "getQuote":{
+        "heb":"קבל הצעת מחיר",
+        "eng":"Get Free Quote"
+    },
+    "recentImages":{
+        "heb":"בדיקות גג אחרונות",
+        "eng":"Recent Roof Inspections"
+    },
+    "allRightReserved":{
+        "heb":"כל הזכויות שמורות",
+        "eng":"All Rights Reserved"
+    },
+    "callUs":{
+        "heb":"התקשר אלינו",
+        "eng":"Call Us"
+    },
+    "emailUs":{
+        "heb":"שלח מייל",
+        "eng":"Email Us"
+    },
+    "ourServices":{
+        "heb":"השירותים שלנו",
+        "eng":"Our Services"
+    },
+    "learnMore":{
+        "heb":"למד עוד",
+        "eng":"Learn More"
+    },
+    "bookNow":{
+        "heb":"הזמן עכשיו",
+        "eng":"Book Now"
+    },
+    "backToHome":{
+        "heb":"חזור לדף הבית",
+        "eng":"Back to Home"
+    },
+    "whyChooseUs":{
+        "heb":"למה לבחור בנו",
+        "eng":"Why Choose Us"
+    },
+    "howItWorks":{
+        "heb":"איך זה עובד",
+        "eng":"How It Works"
+    },
+    "realEstateNav":{
+        "heb":"נדל\"ן",
+        "eng":"Real Estate"
+    },
+    "roofInspectionNav":{
+        "heb":"בדיקת גגות",
+        "eng":"Roof Inspection"
+    },
+    "mediaContentNav":{
+        "heb":"תוכן מדיה",
+        "eng":"Media"
+    },
+    "realEstateTitle":{
+        "heb":"צילום נדל\"ן מהאוויר",
+        "eng":"Aerial Real Estate Filming"
+    },
+    "realEstateSubtitle":{
+        "heb":"הצג את הנכס שלך מהזווית הטובה ביותר",
+        "eng":"Showcase Your Property from the Best Angle"
+    },
+    "realEstateDesc":{
+        "heb":"אנו מספקים שירות צילום נדל\"ן מקצועי מהאוויר. רחפני הצילום שלנו מסוגלים ללכוד זריקות קולנועיות מדהימות שיגרמו לנכס שלך לבלוט בשוק התחרותי. תמונות אוויריות מגדילות את מחיר המכירה ומזרזות את תהליך המכירה.",
+        "eng":"We provide professional aerial real estate photography and filming services. Our drones capture stunning cinematic shots that make your property stand out in a competitive market. Aerial photography increases sale prices and speeds up the selling process."
+    },
+    "realEstateFeature1":{
+        "heb":"צילום אווירי 4K",
+        "eng":"4K Aerial Photography"
+    },
+    "realEstateFeature1Desc":{
+        "heb":"תמונות וסרטוני 4K ברזולוציה גבוהה מכל זווית",
+        "eng":"High-resolution 4K photos and videos from every angle"
+    },
+    "realEstateFeature2":{
+        "heb":"סיורים וירטואליים",
+        "eng":"Virtual Property Tours"
+    },
+    "realEstateFeature2Desc":{
+        "heb":"סיורים סוחפים המאפשרים ללקוחות לחוות את הנכס מרחוק",
+        "eng":"Immersive tours letting clients experience the property remotely"
+    },
+    "realEstateFeature3":{
+        "heb":"עריכה מקצועית",
+        "eng":"Professional Editing"
+    },
+    "realEstateFeature3Desc":{
+        "heb":"עריכת וידאו ותמונות מקצועית עם מוסיקת רקע",
+        "eng":"Professional video and photo editing with background music"
+    },
+    "roofInspectionTitle":{
+        "heb":"בדיקת גגות מהאוויר",
+        "eng":"Aerial Roof Inspection"
+    },
+    "roofInspectionSubtitle":{
+        "heb":"בדוק את הגג שלך ללא סיכון",
+        "eng":"Inspect Your Roof Without the Risk"
+    },
+    "roofInspectionDesc":{
+        "heb":"הרחפן שלנו מאפשר בדיקה מקיפה של הגג שלך מכל זווית אפשרית. קבל תמונות מפורטות וסרטון מלא ללא צורך בסולם מסוכן. אנו מזהים בעיות לפני שהן הופכות לתיקונים יקרים.",
+        "eng":"Our drone enables a comprehensive inspection of your roof from every possible angle. Get detailed images and full video without needing a dangerous ladder. We identify problems before they become expensive repairs."
+    },
+    "roofFeature1":{
+        "heb":"תמונות 4K ברורות",
+        "eng":"Crystal Clear 4K Images"
+    },
+    "roofFeature1Desc":{
+        "heb":"תמונות ברזולוציה גבוהה לזיהוי כל סדק ובעיה",
+        "eng":"High-resolution images to identify every crack and issue"
+    },
+    "roofFeature2":{
+        "heb":"גילוי בעיות מוקדם",
+        "eng":"Early Problem Detection"
+    },
+    "roofFeature2Desc":{
+        "heb":"אנו מזהים נזקים לפני שהם הופכים לתיקונים יקרים",
+        "eng":"We detect damage before it becomes costly repairs"
+    },
+    "roofFeature3":{
+        "heb":"בטוח ויעיל לחלוטין",
+        "eng":"Completely Safe & Efficient"
+    },
+    "roofFeature3Desc":{
+        "heb":"ללא סיכון לאנשים וללא נזק לגג שלך",
+        "eng":"No risk to people and no damage to your roof"
+    },
+    "step1":{
+        "heb":"שלב 1",
+        "eng":"Step 1"
+    },
+    "step1Title":{
+        "heb":"הזמן תור",
+        "eng":"Book Appointment"
+    },
+    "step1Desc":{
+        "heb":"צור קשר ונקבע זמן שנוח לך",
+        "eng":"Contact us and we'll schedule a convenient time"
+    },
+    "step2":{
+        "heb":"שלב 2",
+        "eng":"Step 2"
+    },
+    "step2Title":{
+        "heb":"הרחפן טס",
+        "eng":"Drone Flies"
+    },
+    "step2Desc":{
+        "heb":"הרחפן שלנו יסרוק את הגג מכל הזוויות",
+        "eng":"Our drone scans your roof from all angles"
+    },
+    "step3":{
+        "heb":"שלב 3",
+        "eng":"Step 3"
+    },
+    "step3Title":{
+        "heb":"קבל דוח",
+        "eng":"Get Report"
+    },
+    "step3Desc":{
+        "heb":"תקבל תמונות וסרטון מלא של הגג שלך",
+        "eng":"You receive full photos and video of your roof"
+    },
+    "mediaContentTitle":{
+        "heb":"תוכן מדיה אווירי",
+        "eng":"Aerial Media Content"
+    },
+    "mediaContentSubtitle":{
+        "heb":"תוכן אווירי יצירתי ומרהיב",
+        "eng":"Creative & Stunning Aerial Content"
+    },
+    "mediaContentDesc":{
+        "heb":"אנו יוצרים תוכן אווירי מקצועי למדיה, פרסומות, אירועים ועוד. הצוות שלנו מנוסה ביצירת תוכן חזותי מדהים שמספר סיפור ומרגש את הצופים.",
+        "eng":"We create professional aerial content for media, advertisements, events, and more. Our team is experienced in creating stunning visual content that tells a story and captivates audiences."
+    },
+    "mediaFeature1":{
+        "heb":"צילום אירועים",
+        "eng":"Event Coverage"
+    },
+    "mediaFeature1Desc":{
+        "heb":"חתונות, אירועים עסקיים ופסטיבלים מהאוויר",
+        "eng":"Weddings, corporate events and festivals from above"
+    },
+    "mediaFeature2":{
+        "heb":"פרסומות ושיווק",
+        "eng":"Commercials & Marketing"
+    },
+    "mediaFeature2Desc":{
+        "heb":"תוכן שיווקי מרהיב לעסק שלך",
+        "eng":"Stunning marketing content for your business"
+    },
+    "mediaFeature3":{
+        "heb":"סרטים ותיעוד",
+        "eng":"Film & Documentary"
+    },
+    "mediaFeature3Desc":{
+        "heb":"סרטים ותיעוד בסגנון קולנועי מקצועי",
+        "eng":"Films and documentaries in professional cinematic style"
+    },
+    "homeServiceCardReal":{
+        "heb":"צילום נדל\"ן מרהיב מהאוויר לשיווק הנכס שלך",
+        "eng":"Stunning aerial real estate filming to market your property"
+    },
+    "homeServiceCardRoof":{
+        "heb":"בדוק את מצב הגג שלך בבטחה ללא סולמות",
+        "eng":"Safely inspect the condition of your roof without ladders"
+    },
+    "homeServiceCardMedia":{
+        "heb":"תוכן אווירי מקצועי לאירועים, פרסומות ועוד",
+        "eng":"Professional aerial content for events, commercials and more"
     }
+}

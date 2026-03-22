@@ -1,0 +1,45 @@
+@import "../../styles/variables.scss";
+
+.floating-drone {
+  position: fixed;
+  bottom: 28px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  z-index: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  // NOTE: transform is applied inline for per-frame smoothness
+
+  &--visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  // Subtle elliptical glow beneath the drone
+  &__shadow {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 18px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(79, 195, 247, 0.55) 0%, transparent 70%);
+    animation: droneShadowPulse 2.2s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @include respond-to-max(sm) {
+    width: 110px;
+    height: 110px;
+    bottom: 16px;
+    right: 12px;
+  }
+}
+
+@keyframes droneShadowPulse {
+  0%, 100% { opacity: 0.5; transform: translateX(-50%) scaleX(1); }
+  50%       { opacity: 1;   transform: translateX(-50%) scaleX(1.3); }
+}
