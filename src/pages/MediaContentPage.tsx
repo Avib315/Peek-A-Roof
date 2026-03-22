@@ -1,31 +1,50 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslationStore } from '../stores/useTranslationStore';
 import DroneScene from '../component/DroneScene';
 import ContactForm from '../component/ContactForm';
-import { Star, Megaphone, Film, ArrowLeft } from 'lucide-react';
+import { Star, Megaphone, Film, ArrowLeft, Play } from 'lucide-react';
 import settings from '../assets/settings/settings.json';
 import './ServicePage.scss';
 import './MediaContentPage.scss';
 
-// ── YouTube embed card ─────────────────────────────────────────────────────
+// Extract video ID from a YouTube embed URL
+const getVideoId = (embedUrl: string): string =>
+  embedUrl.split('/embed/')[1]?.split('?')[0] ?? '';
+
+// ── YouTube facade — thumbnail until user clicks, then loads iframe ─────────
 interface VideoCardProps {
   youtubeUrl: string;
   title: string;
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({ youtubeUrl, title }) => (
-  <div className="media-video-card">
-    <iframe
-      className="media-video-card__iframe"
-      src={`${youtubeUrl}?rel=0&modestbranding=1`}
-      title={title}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    />
-    <p className="media-video-card__title">{title}</p>
-  </div>
-);
+const VideoCard: React.FC<VideoCardProps> = ({ youtubeUrl, title }) => {
+  const [active, setActive] = useState(false);
+  const videoId = getVideoId(youtubeUrl);
+  const thumb = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
+  return (
+    <div className="media-video-card">
+      {active ? (
+        <iframe
+          className="media-video-card__iframe"
+          src={`${youtubeUrl}?rel=0&modestbranding=1&autoplay=1`}
+          title={title}
+          allow="autoplay; picture-in-picture; fullscreen"
+          allowFullScreen
+        />
+      ) : (
+        <div className="media-video-card__facade" onClick={() => setActive(true)}>
+          <img src={thumb} alt={title} className="media-video-card__thumb" />
+          <div className="media-video-card__play-btn">
+            <Play size={36} fill="white" />
+          </div>
+        </div>
+      )}
+      <p className="media-video-card__title">{title}</p>
+    </div>
+  );
+};
 
 // ───────────────────────────────────────────────────────────────────────────
 const MediaContentPage: React.FC = () => {

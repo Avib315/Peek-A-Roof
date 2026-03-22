@@ -5,6 +5,7 @@ import ContactForm from '../component/ContactForm';
 import imgRealEstate   from '../assets/images/genericImages/arial_props_markeing.jpeg';
 import imgRoofInspect  from '../assets/images/genericImages/roofGutterInspection.webp';
 import imgMediaContent from '../assets/images/genericImages/souial-media-for-bis.webp';
+import imgEvents       from '../assets/images/genericImages/Special-Occasions.jpeg';
 import settings from '../assets/settings/settings.json';
 import './HomePage.scss';
 
@@ -28,7 +29,7 @@ const HomePage: React.FC = () => {
     { num: '01', img: imgRoofInspect,  title: translations.s1Title, tag: translations.s1Tag, desc: translations.s1Desc, cta: translations.s1Cta },
     { num: '02', img: imgRealEstate,   title: translations.s2Title, tag: translations.s2Tag, desc: translations.s2Desc, cta: translations.s2Cta },
     { num: '03', img: imgMediaContent, title: translations.s3Title, tag: translations.s3Tag, desc: translations.s3Desc, cta: translations.s3Cta },
-    { num: '04', img: imgRealEstate,   title: translations.s4Title, tag: translations.s4Tag, desc: translations.s4Desc, cta: translations.s4Cta },
+    { num: '04', img: imgEvents,        title: translations.s4Title, tag: translations.s4Tag, desc: translations.s4Desc, cta: translations.s4Cta },
   ];
 
   const reviews = settings.reviews;
