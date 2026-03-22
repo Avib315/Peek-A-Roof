@@ -286,14 +286,13 @@ const DroneScene: React.FC<DroneSceneProps> = ({ variant = 'hero', autoRotate = 
         camera={{ position: [0.6, 0.9, 2.0], fov: 42 }}
         gl={{ antialias: true, alpha: true }}
         style={{ background: 'transparent' }}
-        shadows
       >
         <Suspense fallback={null}>
           {/* IBL — city environment for metallic reflections */}
           <Environment preset="city" />
 
           {/* Key light — warm from top-right */}
-          <directionalLight position={[4, 7, 4]} intensity={1.4} color="#fff8f0" castShadow />
+          <directionalLight position={[4, 7, 4]} intensity={1.4} color="#fff8f0" />
           {/* Fill light — cool blue from left */}
           <directionalLight position={[-4, 2, -2]} intensity={0.5} color="#4488ff" />
           {/* Rim light — cyan from behind */}
