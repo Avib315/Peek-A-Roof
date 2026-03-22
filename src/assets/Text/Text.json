@@ -4,8 +4,28 @@
         "eng": "SEE YOUR ROOF WITHOUT LEAVING THE GROUND"
     },
     "secondTitle": {
-        "heb": "הגג שלך לא ידוע? בדוק אותו באמצעות רחפן",
-        "eng": "ROOF UNKNOWN? CHECK IT BY DRONE"
+        "heb": "אנחנו טסים כדי שאתה לא תצטרך לטפס",
+        "eng": "We fly so you don't have to climb"
+    },
+    "heroEyebrow": {
+        "heb": "צילום רחפנים מקצועי",
+        "eng": "Professional Drone Photography"
+    },
+    "heroLine1": {
+        "heb": "אהרון",
+        "eng": "Aaron"
+    },
+    "heroLine2": {
+        "heb": "אווירי",
+        "eng": "Aerial"
+    },
+    "viewServices": {
+        "heb": "צפה בשירותים",
+        "eng": "View Services"
+    },
+    "getFreeQuote": {
+        "heb": "קבל הצעת מחיר חינם",
+        "eng": "Get a Free Quote"
     },
     "question": {
         "heb": "מודאג מאריחים רופפים?",
@@ -28,12 +48,24 @@
         "eng": "Before calling someone with a ladder and a price tag, let us show you exactly what's going on — no pressure and no pushy quotes. We use a high-definition drone with outstanding quality and stability to photograph and film your roof from every angle. You get clear images and professional footage so you can make informed decisions."
     },
     "footer": {
-        "heb": "מושלם עבור בעלי בתים, משכירים וכל מי שרוצה שקט נפשי מבלי לעזוב את הקרקע. אנחנו טסים כדי שאתה לא תצטרך לטפס.",
-        "eng": "Perfect for homeowners, landlords and anyone who wants peace of mind without leaving the ground. We fly so you don't have to climb."
+        "heb": "אנחנו טסים כדי שאתה לא תצטרך לטפס.",
+        "eng": "We fly so you don't have to climb."
     },
     "home":{
         "heb":"בית",
         "eng":"Home"
+    },
+    "servicesNav":{
+        "heb":"שירותים",
+        "eng":"Services"
+    },
+    "aboutNav":{
+        "heb":"אודות",
+        "eng":"About"
+    },
+    "reviewsNav":{
+        "heb":"ביקורות",
+        "eng":"Reviews"
     },
     "gallery":{
         "heb":"גלריה",
@@ -45,7 +77,87 @@
     },
     "getQuote":{
         "heb":"קבל הצעת מחיר",
-        "eng":"Get Free Quote"
+        "eng":"Get a Quote"
+    },
+    "whatWeDo":{
+        "heb":"מה אנחנו עושים",
+        "eng":"What we do"
+    },
+    "s1Title":{
+        "heb":"בדיקת גגות וצנרת",
+        "eng":"Roof & Gutter Inspection"
+    },
+    "s1Tag":{
+        "heb":"מודאג מאריחים רופפים?",
+        "eng":"Worried about loose tiles?"
+    },
+    "s1Desc":{
+        "heb":"לפני שאתה מזמין מישהו עם סולם ותג מחיר, תן לנו להראות לך בדיוק מה קורה — ללא לחץ, ללא הצעות אגרסיביות. אנו משתמשים ברחפן HD לצילום הגג שלך מכל זווית. תמונות ברורות, צילומים מקצועיים, החלטות מושכלות.",
+        "eng": "Before calling someone with a ladder and a price tag, let us show you exactly what's going on — no pressure, no pushy quotes. We use a high-definition drone to photograph your roof from every angle. Clear images, professional footage, informed decisions."
+    },
+    "s1Cta":{
+        "heb":"הזמן בדיקה →",
+        "eng":"Book an inspection →"
+    },
+    "s2Title":{
+        "heb":"שיווק נדל\"ן מהאוויר",
+        "eng":"Aerial Property Marketing"
+    },
+    "s2Tag":{
+        "heb":"רוצה שהנכס שלך יבלוט?",
+        "eng":"Want your property to stand out?"
+    },
+    "s2Desc":{
+        "heb":"צילום אווירי נותן לקונים ולשוכרים תצוגה שלא ניתן לקבל מהקרקע. תמונות חדות ומרהיבות וסרטון קולנועי חלק שמדגישים את המיקום, השטח והסביבה — עוזרים לנכס שלך לעשות רושם ראשוני חזק יותר.",
+        "eng": "Aerial photography gives buyers and tenants a view they simply cannot get from the ground. Sharp, eye-catching images and smooth cinematic video that highlight the setting, space and surroundings — helping your property make a stronger first impression."
+    },
+    "s2Cta":{
+        "heb":"הזמן צילום →",
+        "eng":"Book a shoot →"
+    },
+    "s3Title":{
+        "heb":"מדיה חברתית לעסקים",
+        "eng":"Social Media for Business"
+    },
+    "s3Tag":{
+        "heb":"צריך תוכן שתופס תשומת לב?",
+        "eng":"Need content that grabs attention?"
+    },
+    "s3Desc":{
+        "heb":"בעולם של גלילה, חזות חזקה חשובה יותר מאי פעם. אנו עוזרים לעסקים ליצור תוכן רחפן דינמי — חנויות, מסעדות, מקומות אירועים, מלונות ועוד. תמונות ווידאו באיכות גבוהה המיועדים למדיה חברתית, אתרים ושימוש פרסומי.",
+        "eng": "In a world of scrolling, strong visuals matter more than ever. We help businesses create dynamic drone content — storefronts, restaurants, venues, hotels and more. High-quality photo and video designed for social media, websites and promotional use."
+    },
+    "s3Cta":{
+        "heb":"בואו ניצור →",
+        "eng":"Let's create →"
+    },
+    "s4Title":{
+        "heb":"אירועים מיוחדים",
+        "eng":"Special Occasions & Events"
+    },
+    "s4Tag":{
+        "heb":"תעד את האירוע שלך מהאוויר.",
+        "eng":"Capture your event from above."
+    },
+    "s4Desc":{
+        "heb":"מימי הולדת וחגיגות משפחתיות ועד אירועים קהילתיים וכינוסים חיצוניים, צילום אווירי יוצר חזות בלתי נשכחת שתופסת את האווירה, הגודל והתרגשות היום. צילומים ותמונות יפות לשמור, לשתף או לפרסם ברשת.",
+        "eng": "From birthdays and family celebrations to community events and outdoor gatherings, aerial footage creates memorable visuals that capture the atmosphere, scale and excitement of the day. Beautiful footage and photos to keep, share or post online."
+    },
+    "s4Cta":{
+        "heb":"הזמן את האירוע שלך →",
+        "eng":"Book your event →"
+    },
+    "ourWork":{
+        "heb":"העבודות שלנו",
+        "eng":"Our work"
+    },
+    "shotFromAbove":{
+        "heb":"צולם מלמעלה",
+        "eng":"Shot from Above"
+    },
+    "gallerySubtitle":{
+        "heb":"כל תמונה צולמה עם רחפן ה-HD שלנו — מדויק, יציב וקולנועי. לחץ על כל תמונה לצפייה בגודל מלא.",
+        "eng":"Every image captured with our high-definition drone — precise, stable and cinematic. Click any image to view full size."
     },
     "recentImages":{
         "heb":"בדיקות גג אחרונות",
@@ -53,7 +165,7 @@
     },
     "allRightReserved":{
         "heb":"כל הזכויות שמורות",
-        "eng":"All Rights Reserved"
+        "eng":"All rights reserved"
     },
     "callUs":{
         "heb":"התקשר אלינו",
@@ -81,7 +193,91 @@
     },
     "whyChooseUs":{
         "heb":"למה לבחור בנו",
-        "eng":"Why Choose Us"
+        "eng":"Why choose us"
+    },
+    "whyChooseUsTitle":{
+        "heb":"אנחנו טסים כדי שאתה לא תצטרך לטפס",
+        "eng":"We Fly So You Don't Have To Climb"
+    },
+    "whyChooseUsDesc":{
+        "heb":"באמצעות רחפן באיכות גבוהה עם יציבות ובהירות תמונה מצוינת, אנו מצלמים את מה שחשוב — נותנים לך את המידע והחזות שאתה צריך, מועברים באופן מקצועי וללא כאב ראש.",
+        "eng":"Using a high-quality drone with outstanding stability and image clarity, we capture what matters — giving you the information and visuals you need, delivered professionally and without the hassle."
+    },
+    "whyPoint1":{
+        "heb":"צילומים בהגדרה גבוהה שנותנים לך תמונה ברורה ומפורטת מכל זווית",
+        "eng":"High-definition footage that gives you a clear, detailed picture from every angle"
+    },
+    "whyPoint2":{
+        "heb":"ללא לחץ, ללא הצעות אגרסיביות — רק חזות ישרה כדי שתוכל לקבל החלטות מושכלות",
+        "eng":"No pressure, no pushy quotes — just honest visuals so you can make informed decisions"
+    },
+    "whyPoint3":{
+        "heb":"מושלם לבעלי בתים, משכירים, סוכני נדל\"ן, עסקים ומארגני אירועים",
+        "eng":"Perfect for homeowners, landlords, estate agents, businesses and event organisers"
+    },
+    "whyPoint4":{
+        "heb":"תוצאות מקצועיות מועברות במהירות, מוכנות לשימוש אונליין או לשיתוף עם אחרים",
+        "eng":"Professional results delivered quickly, ready to use online or share with others"
+    },
+    "whyPoint5":{
+        "heb":"מבוטח במלואו ומופעל בבטחה ובאחריות בכל עבודה",
+        "eng":"Fully insured and operated safely and responsibly on every job"
+    },
+    "whoWeWorkWith":{
+        "heb":"עם מי אנחנו עובדים",
+        "eng":"Who we work with"
+    },
+    "builtForEveryone":{
+        "heb":"נבנה לכולם",
+        "eng":"Built for Everyone"
+    },
+    "fromTheGroundUp":{
+        "heb":"מהיסוד",
+        "eng":"From the Ground Up"
+    },
+    "whatClientsSay":{
+        "heb":"מה אומרים הלקוחות",
+        "eng":"What clients say"
+    },
+    "trustedBy":{
+        "heb":"מהימן על ידי בעלי בתים ועסקים",
+        "eng":"Trusted by Homeowners & Businesses"
+    },
+    "review1Quote":{
+        "heb":"שירות פנטסטי לחלוטין. היו לנו חששות לגבי כמה אריחים ואהרון שלח לנו צילומי רחפן ברורים תוך 24 שעות. חסך לנו הון — התברר שזה תיקון קטן, לא התיקון המלא שהרוצף הציע לנו!",
+        "eng":"Absolutely fantastic service. We had concerns about a few tiles and Aaron sent us clear drone footage within 24 hours. Saved us a fortune — turned out it was a minor fix, not the full repair the roofer quoted us for!"
+    },
+    "review1Name":{
+        "heb":"שרה מ.",
+        "eng":"Sarah M."
+    },
+    "review1Title":{
+        "heb":"בעלת בית, מנצ'סטר",
+        "eng":"Homeowner, Manchester"
+    },
+    "review2Quote":{
+        "heb":"השתמשנו באהרון לצילומים אוויריים של פיתוח שעמדנו לשווק. הצילומים היו מדהימים — חלקים, קולנועיים וגרמו לנכס לבלוט. נמכר בשבועיים. נשתמש שוב ללא ספק.",
+        "eng":"We used Aaron for aerial shots of a development we were marketing. The footage was stunning — smooth, cinematic and it really made the property stand out. Sold in two weeks. Will use again without question."
+    },
+    "review2Name":{
+        "heb":"ג'יימס ר.",
+        "eng":"James R."
+    },
+    "review2Title":{
+        "heb":"סוכן נדל\"ן, לונדון",
+        "eng":"Estate Agent, London"
+    },
+    "review3Quote":{
+        "heb":"הזמנו כיסוי רחפן למדיה החברתית של המקום שלנו והתוצאות הדהימו אותנו. ריל האווירי שקיבלנו היה התוכן הטוב ביותר שלנו בהרבה. מקצועי, דייקן ובעל ערך מצוין.",
+        "eng":"We booked drone coverage for our venue's social media and the results blew us away. The aerial reels we got have been our best-performing content by a mile. Professional, punctual and great value."
+    },
+    "review3Name":{
+        "heb":"פריה ק.",
+        "eng":"Priya K."
+    },
+    "review3Title":{
+        "heb":"מנהלת מקום אירועים",
+        "eng":"Events Venue Manager"
     },
     "howItWorks":{
         "heb":"איך זה עובד",
@@ -257,7 +453,7 @@
     },
     "getInTouch":{
         "heb":"צור קשר",
-        "eng":"Get in Touch"
+        "eng":"Get in touch"
     },
     "letsWorkTogether":{
         "heb":"בואו נעבוד יחד",
@@ -267,17 +463,41 @@
         "heb":"מוכן לראות דברים מפרספקטיבה חדשה? מלא את הטופס ונחזור אליך מהר — ללא התחייבות, ללא לחץ.",
         "eng":"Ready to see things from a new perspective? Fill in the form and we'll get back to you quickly — no obligation, no pressure."
     },
+    "firstName":{
+        "heb":"שם פרטי",
+        "eng":"First Name"
+    },
+    "lastName":{
+        "heb":"שם משפחה",
+        "eng":"Last Name"
+    },
+    "yourEmail":{
+        "heb":"כתובת אימייל",
+        "eng":"Email Address"
+    },
+    "phoneLabel":{
+        "heb":"מספר טלפון",
+        "eng":"Phone Number"
+    },
+    "serviceRequired":{
+        "heb":"שירות נדרש",
+        "eng":"Service Required"
+    },
+    "selectService":{
+        "heb":"בחר שירות...",
+        "eng":"Select a service..."
+    },
     "yourName":{
         "heb":"השם שלך",
         "eng":"Your Name"
     },
-    "yourEmail":{
-        "heb":"האימייל שלך",
-        "eng":"Your Email"
-    },
     "yourMessage":{
         "heb":"ההודעה שלך",
-        "eng":"Your Message"
+        "eng":"Message"
+    },
+    "sendEnquiry":{
+        "heb":"שלח פנייה",
+        "eng":"Send Enquiry"
     },
     "sendMessage":{
         "heb":"שלח הודעה",

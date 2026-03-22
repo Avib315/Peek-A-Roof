@@ -6,23 +6,30 @@ import './style.scss';
 const ContactForm: React.FC = () => {
   const { translations } = useTranslationStore();
 
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({
+    firstName: '', lastName: '', email: '', phone: '', service: '', message: '',
+  });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate async send
-    setTimeout(() => {
-      setLoading(false);
-      setSent(true);
-    }, 1200);
+    setTimeout(() => { setLoading(false); setSent(true); }, 1200);
   };
+
+  const serviceOptions = [
+    translations.s1Title,
+    translations.s2Title,
+    translations.s3Title,
+    translations.s4Title,
+  ];
 
   const infoItems = [
     {
@@ -46,25 +53,15 @@ const ContactForm: React.FC = () => {
   ];
 
   const socials = [
-    {
-      icon: <Facebook size={18} />,
-      label: translations.facebookLabel,
-      href: 'https://www.facebook.com/aaronaerialservices',
-      abbr: 'f',
-    },
-    {
-      icon: <Instagram size={18} />,
-      label: translations.instagramLabel,
-      href: 'https://www.instagram.com/aaronaerialservices',
-      abbr: 'ig',
-    },
+    { icon: <Facebook size={18} />, label: translations.facebookLabel, href: 'https://www.facebook.com/aaronaerialservices', abbr: 'f' },
+    { icon: <Instagram size={18} />, label: translations.instagramLabel, href: 'https://www.instagram.com/aaronaerialservices', abbr: 'ig' },
   ];
 
   return (
     <div className="contact-form-wrap">
       <div className="contact-form-grid">
 
-        {/* ── Left: form ───────────────────────────────── */}
+        {/* ── Left: form ─────────────────────────────────── */}
         <div className="contact-form-left">
           <span className="cf-eyebrow">{translations.getInTouch}</span>
           <h2 className="cf-title">{translations.letsWorkTogether}</h2>
@@ -77,53 +74,62 @@ const ContactForm: React.FC = () => {
             </div>
           ) : (
             <form className="cf-form" onSubmit={handleSubmit} noValidate>
-              <div className="cf-field">
-                <label htmlFor="cf-name">{translations.yourName}</label>
-                <input
-                  id="cf-name"
-                  name="name"
-                  type="text"
-                  required
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder={translations.yourName}
-                />
+
+              {/* Name row */}
+              <div className="cf-row">
+                <div className="cf-field">
+                  <label htmlFor="cf-firstName">{translations.firstName}</label>
+                  <input id="cf-firstName" name="firstName" type="text" required
+                    value={form.firstName} onChange={handleChange} placeholder="John" />
+                </div>
+                <div className="cf-field">
+                  <label htmlFor="cf-lastName">{translations.lastName}</label>
+                  <input id="cf-lastName" name="lastName" type="text" required
+                    value={form.lastName} onChange={handleChange} placeholder="Smith" />
+                </div>
               </div>
 
+              {/* Email */}
               <div className="cf-field">
                 <label htmlFor="cf-email">{translations.yourEmail}</label>
-                <input
-                  id="cf-email"
-                  name="email"
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder={translations.yourEmail}
-                />
+                <input id="cf-email" name="email" type="email" required
+                  value={form.email} onChange={handleChange} placeholder="john@example.com" />
               </div>
 
+              {/* Phone */}
+              <div className="cf-field">
+                <label htmlFor="cf-phone">{translations.phoneLabel}</label>
+                <input id="cf-phone" name="phone" type="tel"
+                  value={form.phone} onChange={handleChange} placeholder="+44 7000 000000" />
+              </div>
+
+              {/* Service */}
+              <div className="cf-field">
+                <label htmlFor="cf-service">{translations.serviceRequired}</label>
+                <select id="cf-service" name="service" value={form.service} onChange={handleChange}>
+                  <option value="">{translations.selectService}</option>
+                  {serviceOptions.map((opt) => (
+                    <option key={opt} value={opt}>{opt}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Message */}
               <div className="cf-field">
                 <label htmlFor="cf-message">{translations.yourMessage}</label>
-                <textarea
-                  id="cf-message"
-                  name="message"
-                  rows={5}
-                  required
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder={translations.yourMessage}
-                />
+                <textarea id="cf-message" name="message" rows={4} required
+                  value={form.message} onChange={handleChange}
+                  placeholder="Tell us a bit about what you need..." />
               </div>
 
               <button type="submit" className="cf-submit" disabled={loading}>
-                {loading ? <span className="cf-spinner" /> : translations.sendMessage}
+                {loading ? <span className="cf-spinner" /> : translations.sendEnquiry}
               </button>
             </form>
           )}
         </div>
 
-        {/* ── Right: info + socials ─────────────────────── */}
+        {/* ── Right: info + socials ──────────────────────── */}
         <div className="contact-form-right">
           <div className="cf-info-list">
             {infoItems.map((item, i) => (

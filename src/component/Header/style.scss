@@ -79,24 +79,26 @@
     gap: $spacing-md;
   }
 
-  // Language toggle
-  .lang-btn {
+  // Theme toggle (dark/light)
+  .theme-btn {
     background: transparent;
-    border: 1px solid rgba(79, 195, 247, 0.35);
+    border: 1px solid rgba(79, 195, 247, 0.3);
     color: $accent-cyan;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-family: $font-label;
-    font-size: $font-size-sm;
-    font-weight: $font-weight-semibold;
-    letter-spacing: 0.1em;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: all $transition-fast;
+    line-height: 0;
 
     &:hover {
       background: rgba(79, 195, 247, 0.12);
       border-color: $accent-cyan;
-      box-shadow: 0 0 12px rgba(79, 195, 247, 0.2);
+      box-shadow: 0 0 12px rgba(79, 195, 247, 0.25);
+      transform: rotate(20deg);
     }
   }
 

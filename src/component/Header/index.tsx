@@ -3,12 +3,14 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import "./style.scss";
 import Logo from "../Logo";
 import { useTranslationStore } from "../../stores/useTranslationStore";
-import { Menu, X } from "lucide-react";
+import { useThemeStore } from "../../stores/useThemeStore";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { translations, toggleLanguage, isEnglish } = useTranslationStore();
+  const { translations } = useTranslationStore();
+  const { isDark, toggleTheme } = useThemeStore();
   const location = useLocation();
 
   useEffect(() => {
@@ -17,50 +19,56 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
 
   const isHome = location.pathname === "/";
 
+  const navLinks = [
+    ...(isHome
+      ? [
+          { label: translations.servicesNav, href: "#services" },
+          { label: translations.gallery,     href: "#gallery" },
+          { label: translations.aboutNav,    href: "#about" },
+          { label: translations.reviewsNav,  href: "#reviews" },
+          { label: translations.contact,     href: "#contact" },
+        ]
+      : [{ label: translations.home, href: "/" }]
+    ),
+    { label: translations.roofInspectionNav, href: "/roof-inspection" },
+    { label: translations.realEstateNav,     href: "/real-estate" },
+    { label: translations.mediaContentNav,   href: "/media-content" },
+  ];
+
   return (
     <header className={`header ${scrolled ? "scrolled" : ""} ${menuOpen ? "menu-open" : ""}`}>
 
       {/* Logo */}
       <Link to="/" className="logo">
-        <Logo width="44" height="44" />
+        <Logo width="28" height="28" />
         <span>{translations.titleLogo}</span>
       </Link>
 
       {/* Desktop nav */}
       <nav className="header__nav">
-        <NavLink to="/"                className={({ isActive }) => isActive ? "active" : ""}>
-          {translations.home}
-        </NavLink>
-        <NavLink to="/real-estate"     className={({ isActive }) => isActive ? "active" : ""}>
-          {translations.realEstateNav}
-        </NavLink>
-        <NavLink to="/roof-inspection" className={({ isActive }) => isActive ? "active" : ""}>
-          {translations.roofInspectionNav}
-        </NavLink>
-        <NavLink to="/media-content"   className={({ isActive }) => isActive ? "active" : ""}>
-          {translations.mediaContentNav}
-        </NavLink>
-        {isHome && (
-          <a href="#contact">{translations.contact}</a>
+        {navLinks.map((link) =>
+          link.href.startsWith("#") ? (
+            <a key={link.href} href={link.href}>{link.label}</a>
+          ) : (
+            <NavLink key={link.href} to={link.href} className={({ isActive }) => isActive ? "active" : ""}>{link.label}</NavLink>
+          )
         )}
       </nav>
 
       {/* Right side actions */}
       <div className="header__actions">
-        <button className="lang-btn" onClick={toggleLanguage} title="Switch language">
-          {isEnglish ? "עב" : "EN"}
+        <button className="theme-btn" onClick={toggleTheme} title={isDark ? "Switch to light mode" : "Switch to dark mode"}>
+          {isDark ? <Sun size={20} /> : <Moon size={20} />}
         </button>
         {isHome && (
           <a href="#contact" className="contact-btn">{translations.getQuote}</a>
         )}
-        {/* Hamburger */}
         <button
           className="hamburger-btn"
           onClick={() => setMenuOpen((o) => !o)}
@@ -72,12 +80,17 @@ const Header: React.FC = () => {
 
       {/* Mobile drawer */}
       <div className={`mobile-menu ${menuOpen ? "mobile-menu--open" : ""}`}>
-        <NavLink to="/"                end onClick={() => setMenuOpen(false)}>{translations.home}</NavLink>
-        <NavLink to="/real-estate"         onClick={() => setMenuOpen(false)}>{translations.realEstateNav}</NavLink>
-        <NavLink to="/roof-inspection"     onClick={() => setMenuOpen(false)}>{translations.roofInspectionNav}</NavLink>
-        <NavLink to="/media-content"       onClick={() => setMenuOpen(false)}>{translations.mediaContentNav}</NavLink>
+        {navLinks.map((link) =>
+          link.href.startsWith("#") ? (
+            <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>{link.label}</a>
+          ) : (
+            <NavLink key={link.href} to={link.href} onClick={() => setMenuOpen(false)}>{link.label}</NavLink>
+          )
+        )}
         {isHome && (
-          <a href="#contact" onClick={() => setMenuOpen(false)}>{translations.contact}</a>
+          <a href="#contact" className="mobile-menu__cta" onClick={() => setMenuOpen(false)}>
+            {translations.getQuote}
+          </a>
         )}
       </div>
 

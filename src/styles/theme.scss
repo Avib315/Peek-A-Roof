@@ -1,0 +1,175 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// LIGHT MODE OVERRIDES
+// Applied when <html class="light"> is set by useThemeStore
+// ─────────────────────────────────────────────────────────────────────────────
+
+html.light {
+
+  // ── Base ──────────────────────────────────────────────────────────────────
+  body {
+    background: #f0f4fa;
+    color: #0d1630;
+  }
+
+  // ── Header ────────────────────────────────────────────────────────────────
+  .header {
+    background: rgba(240, 244, 250, 0.0);
+
+    &.scrolled {
+      background: rgba(240, 244, 250, 0.96) !important;
+      border-bottom-color: rgba(0, 80, 160, 0.15) !important;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo span { color: #0d1630; }
+
+    .header__nav a,
+    .header__nav a:visited { color: #2a3a55; }
+
+    .header__nav a:hover,
+    .header__nav a.active { color: #0077cc; }
+
+    .hamburger-btn { color: #0d1630; }
+
+    .lang-btn {
+      color: #2a3a55;
+      border-color: rgba(0, 80, 160, 0.2);
+      &:hover { color: #0077cc; border-color: #0077cc; }
+    }
+  }
+
+  .mobile-menu {
+    background: rgba(240, 244, 250, 0.98);
+    a { color: #2a3a55; border-bottom-color: rgba(0, 80, 160, 0.1); }
+  }
+
+  // ── Page backgrounds ──────────────────────────────────────────────────────
+  .home-page,
+  .service-page { background: #f0f4fa; }
+
+  .home-hero {
+    background: #0d1630;  // keep hero dark — drone scene needs dark bg
+  }
+
+  .home-about,
+  .home-gallery,
+  .home-clients,
+  .home-contact { background: #e4eaf5; }
+
+  .home-services,
+  .home-why,
+  .home-reviews { background: #f0f4fa; }
+
+  // Section dividers
+  .section-title { color: #0d1630; }
+  .section-desc  { color: #4a5570; }
+
+  // ── Service list items ────────────────────────────────────────────────────
+  .service-item__body { background: #e8edf8; }
+
+  .service-item__title { color: #0d1630; }
+  .service-item__desc  { color: #4a5570; }
+
+  // ── Service cards (sub-pages) ─────────────────────────────────────────────
+  .service-card {
+    background: #ffffff;
+    border-color: rgba(0, 80, 160, 0.12);
+
+    &:hover { border-color: rgba(0, 119, 204, 0.4); }
+
+    &__body h3 { color: #0d1630; }
+    &__body p  { color: #4a5570; }
+  }
+
+  // ── Review cards ──────────────────────────────────────────────────────────
+  .review-card {
+    background: #ffffff;
+    border-color: rgba(0, 80, 160, 0.1);
+
+    &:hover { border-color: rgba(0, 119, 204, 0.3); }
+
+    &__quote  { color: #4a5570; }
+    &__author strong { color: #0d1630; }
+  }
+
+  // ── Why list ──────────────────────────────────────────────────────────────
+  .why-list__item { color: #4a5570; }
+
+  // ── Client tags ───────────────────────────────────────────────────────────
+  .client-tag {
+    background: rgba(0, 80, 160, 0.05);
+    border-color: rgba(0, 80, 160, 0.18);
+    color: #4a5570;
+
+    &:hover {
+      background: rgba(0, 119, 204, 0.1);
+      border-color: #0077cc;
+      color: #0077cc;
+    }
+  }
+
+  // ── Contact form ──────────────────────────────────────────────────────────
+  .contact-form-wrap { color: #0d1630; }
+
+  .cf-title { color: #0d1630; }
+  .cf-desc  { color: #4a5570; }
+
+  .cf-field {
+    label { color: #4a5570; }
+
+    input, textarea, select {
+      background: #ffffff;
+      border-color: rgba(0, 80, 160, 0.2);
+      color: #0d1630;
+
+      &::placeholder { color: #8899aa; }
+
+      &:focus {
+        border-color: rgba(0, 119, 204, 0.55);
+        box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.08);
+      }
+    }
+
+    select option { background: #ffffff; color: #0d1630; }
+  }
+
+  .cf-info-item {
+    &__icon { background: rgba(0, 80, 160, 0.07); border-color: rgba(0, 80, 160, 0.2); color: #0077cc; }
+    &__label { color: #8899aa; }
+    &__value { color: #0d1630; }
+  }
+
+  .cf-socials { border-top-color: rgba(0, 80, 160, 0.12); }
+  .cf-social-link { color: #4a5570; }
+  .cf-social-link__abbr { border-color: rgba(0, 80, 160, 0.2); color: #4a5570; }
+  .cf-social-link__icon { color: #8899aa; }
+
+  // ── Gallery stats ─────────────────────────────────────────────────────────
+  .gallery-stat__label { color: #8899aa; }
+
+  // ── Footer ────────────────────────────────────────────────────────────────
+  .footer {
+    background: #dde4f0;
+    border-top-color: rgba(0, 80, 160, 0.1);
+  }
+
+  .footer-brand    { color: rgba(13, 22, 48, 0.7); }
+  .footer-copyright { color: rgba(0, 80, 160, 0.5); }
+
+  // ── Sub-page sections ─────────────────────────────────────────────────────
+  .sp-desc .container  { color: #4a5570; }
+  .sp-features         { background: #f0f4fa; }
+  .sp-steps            { background: #e4eaf5; }
+
+  .sp-feature-card {
+    background: #ffffff;
+    border-color: rgba(0, 80, 160, 0.1);
+    color: #4a5570;
+    h3 { color: #0d1630; }
+  }
+
+  .sp-step {
+    h3 { color: #0d1630; }
+    p  { color: #4a5570; }
+  }
+}

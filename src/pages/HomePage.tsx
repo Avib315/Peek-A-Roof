@@ -1,13 +1,17 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslationStore } from '../stores/useTranslationStore';
 import DroneScene from '../component/DroneScene';
 import ContactForm from '../component/ContactForm';
-import ImagesBrowser from '../component/ImagesBrowser';
-import imgRealEstate    from '../assets/images/genericImages/arial_props_markeing.jpeg';
-import imgRoofInspect   from '../assets/images/genericImages/roofGutterInspection.webp';
-import imgMediaContent  from '../assets/images/genericImages/souial-media-for-bis.webp';
+import imgRealEstate   from '../assets/images/genericImages/arial_props_markeing.jpeg';
+import imgRoofInspect  from '../assets/images/genericImages/roofGutterInspection.webp';
+import imgMediaContent from '../assets/images/genericImages/souial-media-for-bis.webp';
 import './HomePage.scss';
+
+const clientTypes = [
+  'Homeowners','Landlords','Estate Agents','Property Developers','Private Sellers',
+  'Restaurants','Hotels & Venues','Gyms & Studios','Retail & Storefronts',
+  'Event Organisers','Families & Celebrations','Commercial Premises',
+];
 
 const HomePage: React.FC = () => {
   const { translations } = useTranslationStore();
@@ -19,15 +23,39 @@ const HomePage: React.FC = () => {
           if (entry.isIntersecting) entry.target.classList.add('show');
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.1 }
     );
     document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
-  const handleContactClick = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const services = [
+    { num: '01', img: imgRoofInspect,  title: translations.s1Title, tag: translations.s1Tag, desc: translations.s1Desc, cta: translations.s1Cta },
+    { num: '02', img: imgRealEstate,   title: translations.s2Title, tag: translations.s2Tag, desc: translations.s2Desc, cta: translations.s2Cta },
+    { num: '03', img: imgMediaContent, title: translations.s3Title, tag: translations.s3Tag, desc: translations.s3Desc, cta: translations.s3Cta },
+    { num: '04', img: imgRealEstate,   title: translations.s4Title, tag: translations.s4Tag, desc: translations.s4Desc, cta: translations.s4Cta },
+  ];
+
+  const reviews = [
+    { quote: translations.review1Quote, name: translations.review1Name, title: translations.review1Title },
+    { quote: translations.review2Quote, name: translations.review2Name, title: translations.review2Title },
+    { quote: translations.review3Quote, name: translations.review3Name, title: translations.review3Title },
+  ];
+
+  const stats = [
+    { value: '4K',   label: 'HD Quality' },
+    { value: '360°', label: 'Coverage' },
+    { value: 'Fast', label: 'Turnaround' },
+    { value: '✓',    label: 'Fully Insured' },
+  ];
+
+  const whyPoints = [
+    translations.whyPoint1,
+    translations.whyPoint2,
+    translations.whyPoint3,
+    translations.whyPoint4,
+    translations.whyPoint5,
+  ];
 
   return (
     <div className="home-page">
@@ -41,16 +69,15 @@ const HomePage: React.FC = () => {
         <div className="home-hero__overlay" />
         <div className="home-hero__glow" />
         <div className="home-hero__content fade-in">
-          <span className="home-hero__eyebrow">AARON AERIAL · Drone Services</span>
-          <h1 className="home-hero__title">{translations.title}</h1>
+          <span className="home-hero__eyebrow">{translations.heroEyebrow}</span>
+          <h1 className="home-hero__title">
+            <span>{translations.heroLine1}</span>
+            <span>{translations.heroLine2}</span>
+          </h1>
           <p className="home-hero__subtitle">{translations.secondTitle}</p>
           <div className="home-hero__actions">
-            <button className="btn btn--primary" onClick={handleContactClick}>
-              {translations.getQuote}
-            </button>
-            <button className="btn btn--outline" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
-              {translations.ourServices}
-            </button>
+            <a href="#services" className="btn btn--primary">{translations.viewServices}</a>
+            <a href="#contact"  className="btn btn--outline">{translations.getFreeQuote}</a>
           </div>
         </div>
         <div className="home-hero__scroll-cue">
@@ -59,60 +86,27 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* ── About ─────────────────────────────────────────── */}
-      <section className="home-about fade-in">
-        <div className="container">
-          <span className="section-eyebrow">About Us</span>
-          <h2 className="section-title">{translations.question}</h2>
-          <div className="cyan-rule" />
-          <p className="section-desc">{translations.description}</p>
-        </div>
-      </section>
-
-      {/* ── Services Grid ─────────────────────────────────── */}
+      {/* ── Services ──────────────────────────────────────── */}
       <section id="services" className="home-services fade-in">
         <div className="container">
-          <span className="section-eyebrow">What We Offer</span>
+          <span className="section-eyebrow">{translations.whatWeDo}</span>
           <h2 className="section-title">{translations.ourServices}</h2>
           <div className="cyan-rule" />
-          <div className="service-grid">
-
-            {/* Real Estate */}
-            <Link to="/real-estate" className="service-card service-card--blue">
-              <div className="service-card__img">
-                <img src={imgRealEstate} alt="Aerial real estate filming" />
+          <div className="service-list">
+            {services.map((s) => (
+              <div key={s.num} className="service-item">
+                <div className="service-item__img">
+                  <img src={s.img} alt={s.title} />
+                </div>
+                <div className="service-item__body">
+                  <span className="service-item__num">{s.num}</span>
+                  <h3 className="service-item__title">{s.title}</h3>
+                  <p className="service-item__tag">{s.tag}</p>
+                  <p className="service-item__desc">{s.desc}</p>
+                  <a href="#contact" className="service-item__cta">{s.cta}</a>
+                </div>
               </div>
-              <div className="service-card__body">
-                <h3>{translations.realEstateTitle}</h3>
-                <p>{translations.homeServiceCardReal}</p>
-                <span className="service-card__cta">{translations.learnMore} →</span>
-              </div>
-            </Link>
-
-            {/* Roof Inspection */}
-            <Link to="/roof-inspection" className="service-card service-card--teal">
-              <div className="service-card__img">
-                <img src={imgRoofInspect} alt="Roof gutter inspection" />
-              </div>
-              <div className="service-card__body">
-                <h3>{translations.roofInspectionTitle}</h3>
-                <p>{translations.homeServiceCardRoof}</p>
-                <span className="service-card__cta">{translations.learnMore} →</span>
-              </div>
-            </Link>
-
-            {/* Media Content */}
-            <Link to="/media-content" className="service-card service-card--purple">
-              <div className="service-card__img">
-                <img src={imgMediaContent} alt="Media content production" />
-              </div>
-              <div className="service-card__body">
-                <h3>{translations.mediaContentTitle}</h3>
-                <p>{translations.homeServiceCardMedia}</p>
-                <span className="service-card__cta">{translations.learnMore} →</span>
-              </div>
-            </Link>
-
+            ))}
           </div>
         </div>
       </section>
@@ -120,10 +114,77 @@ const HomePage: React.FC = () => {
       {/* ── Gallery ───────────────────────────────────────── */}
       <section id="gallery" className="home-gallery fade-in">
         <div className="container">
-          <span className="section-eyebrow">Portfolio</span>
-          <h2 className="section-title">{translations.recentImages}</h2>
+          <span className="section-eyebrow">{translations.ourWork}</span>
+          <h2 className="section-title">{translations.shotFromAbove}</h2>
           <div className="cyan-rule" />
-          <ImagesBrowser />
+          <p className="section-desc">{translations.gallerySubtitle}</p>
+          <div className="gallery-stats">
+            {stats.map((s) => (
+              <div key={s.label} className="gallery-stat">
+                <span className="gallery-stat__value">{s.value}</span>
+                <span className="gallery-stat__label">{s.label}</span>
+              </div>
+            ))}
+          </div>
+          <div className="gallery-cta">
+            <a href="/roof-inspection" className="btn btn--outline">{translations.recentImages} →</a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Why Choose Us ─────────────────────────────────── */}
+      <section id="about" className="home-why fade-in">
+        <div className="container">
+          <span className="section-eyebrow">{translations.whyChooseUs}</span>
+          <h2 className="section-title">{translations.whyChooseUsTitle}</h2>
+          <div className="cyan-rule" />
+          <p className="section-desc">{translations.whyChooseUsDesc}</p>
+          <ul className="why-list">
+            {whyPoints.map((point, i) => (
+              <li key={i} className="why-list__item">
+                <span className="why-list__check">✓</span>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ── Who We Work With ──────────────────────────────── */}
+      <section className="home-clients fade-in">
+        <div className="container">
+          <span className="section-eyebrow">{translations.whoWeWorkWith}</span>
+          <h2 className="section-title">
+            {translations.builtForEveryone}<br />
+            <span className="section-title--sub">{translations.fromTheGroundUp}</span>
+          </h2>
+          <div className="cyan-rule" />
+          <div className="client-tags">
+            {clientTypes.map((type) => (
+              <span key={type} className="client-tag">{type}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Reviews ───────────────────────────────────────── */}
+      <section id="reviews" className="home-reviews fade-in">
+        <div className="container">
+          <span className="section-eyebrow">{translations.whatClientsSay}</span>
+          <h2 className="section-title">{translations.trustedBy}</h2>
+          <div className="cyan-rule" />
+          <div className="reviews-grid">
+            {reviews.map((r, i) => (
+              <div key={i} className="review-card">
+                <div className="review-card__stars">★★★★★</div>
+                <p className="review-card__quote">"{r.quote}"</p>
+                <div className="review-card__author">
+                  <strong>{r.name}</strong>
+                  <span>{r.title}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -137,9 +198,9 @@ const HomePage: React.FC = () => {
       {/* ── Footer ────────────────────────────────────────── */}
       <footer className="footer">
         <div className="container">
-          <p className="footer-text">{translations.footer}</p>
+          <p className="footer-brand">{translations.titleLogo} SERVICES</p>
           <p className="footer-copyright">
-            &copy; {new Date().getFullYear()} {translations.titleLogo} — {translations.allRightReserved}.
+            &copy; {new Date().getFullYear()} Aaron Aerial Services. {translations.allRightReserved}.
           </p>
         </div>
       </footer>

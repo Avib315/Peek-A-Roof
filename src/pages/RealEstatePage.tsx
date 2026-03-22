@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslationStore } from '../stores/useTranslationStore';
 import DroneScene from '../component/DroneScene';
-import ContactUs from '../component/ContactUs';
+import ContactForm from '../component/ContactForm';
 import { Camera, Play, Edit3, ArrowLeft } from 'lucide-react';
 import './ServicePage.scss';
 
@@ -82,15 +82,15 @@ const RealEstatePage: React.FC = () => {
       {/* ── Contact ───────────────────────────────────────── */}
       <section className="sp-contact fade-in">
         <div className="container">
-          <ContactUs />
+          <ContactForm />
         </div>
       </section>
 
       <footer className="footer">
         <div className="container">
-          <p className="footer-text">{translations.footer}</p>
+          <p className="footer-brand">{translations.titleLogo} SERVICES</p>
           <p className="footer-copyright">
-            &copy; {new Date().getFullYear()} {translations.titleLogo} — {translations.allRightReserved}.
+            &copy; {new Date().getFullYear()} Aaron Aerial Services. {translations.allRightReserved}.
           </p>
         </div>
       </footer>

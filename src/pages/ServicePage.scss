@@ -433,12 +433,12 @@
   text-align: center;
   border-top: 1px solid rgba(79, 195, 247, 0.08);
 
-  .footer-text {
-    font-size: $font-size-base;
-    line-height: 1.7;
-    max-width: 720px;
-    margin: 0 auto $spacing-md;
-    color: $text-secondary;
+  .footer-brand {
+    font-family: $font-heading;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: $spacing-sm;
   }
 
   .footer-copyright {
